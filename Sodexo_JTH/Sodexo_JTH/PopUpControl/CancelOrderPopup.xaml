@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sodexo_JTH.PopUpControl.CancelOrderPopup"
+                 xmlns:UiTemplates="clr-namespace:Sodexo_JTH.PopUpControl"
+                 xmlns:helpers="clr-namespace:Sodexo_JTH.Helpers"
+                 xmlns:resources="clr-namespace:Sodexo_JTH.Resources"
+                 Padding="10">
+   
+    <Frame Padding="3" BackgroundColor="White" BorderColor="Transparent" 
+           VerticalOptions="Center" HorizontalOptions="Center">
+
+        <Frame.Resources>
+            <Style x:Key="PopupView" TargetType="View">
+
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="VerticalOptions" Value="Center" />
+
+
+                <Setter Property="HorizontalOptions">
+                    <Setter.Value>
+                        <OnIdiom
+                            x:TypeArguments="LayoutOptions"
+                            Desktop="Center"
+                            Phone="FillAndExpand"
+                            TV="Center"
+                            Tablet="CenterAndExpand"
+                            Watch="FillAndExpand" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Frame.Resources>
+
+
+        <StackLayout Style="{StaticResource PopupView}">
+
+            <UiTemplates:PopupTitleView x:Name="titlelbl" Text="{x:Static resources:AppResources.codText}"  Grid.ColumnSpan="2" Close="Titlelbl_Close"/>
+
+            <Grid BackgroundColor="#65676A" Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="100"/>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="FontAttributes" Value="Bold"/>
+                        <Setter Property="TextColor" Value="White"/>
+                       
+                    </Style>
+                </Grid.Resources>
+
+                <Label Grid.Column="0" HorizontalOptions="Center" Text="{x:Static resources:AppResources.odateText}"/>
+                <Label Grid.Column="1" HorizontalOptions="Center" Text="{x:Static resources:AppResources.mteText}"/>
+                <Label Grid.Column="2" HorizontalOptions="Center" Text="{x:Static resources:AppResources.obyText}"/>
+                <Label Grid.Column="3" HorizontalOptions="Center" Text="{x:Static resources:AppResources.remarkText}"/>
+                    
+                </Grid>
+
+                <ListView x:Name="HistoryList" CachingStrategy="RecycleElement" MinimumHeightRequest="120">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                                <Grid >
+                                <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="2*"/>
+                                        <ColumnDefinition Width="100"/>
+
+                                    </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Label LineBreakMode="WordWrap" 
+                                       FontFamily="{StaticResource SansationRegular}"
+                                       VerticalOptions="Center"
+                                       HorizontalOptions="Center"
+                                       Grid.Column="0"
+                                       Text="{Binding orderdate}"/>
+                                <Label Grid.Column="1"  FontFamily="{StaticResource SansationRegular}"
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       LineBreakMode="WordWrap" 
+                                       Text="{Binding mealtimename}"/>
+                                <Label Grid.Column="2" FontFamily="{StaticResource SansationRegular}"  
+                                       HorizontalOptions="Center"
+                                       VerticalOptions="Center"
+                                       LineBreakMode="WordWrap" 
+                                       Text="{Binding createdby}"/>
+                                <Entry Grid.Column="3" 
+                                       FontSize="Body"
+                                       BackgroundColor="White"
+                                       TextColor="Black"
+                                       Placeholder="Enter Remarks"
+                                       Text="{Binding remarks}"/>
+                                <Button Text="Cancel" 
+                                        VerticalOptions="Center" x:Name="CancelBtn"
+                                        Clicked="CancelBtn_Clicked"
+                                        BackgroundColor="IndianRed"
+                                        TextColor="White"
+                                        Grid.Column="4">
+                                    <Button.Triggers>
+                                        <DataTrigger TargetType="Button"
+                                                     Binding="{Binding Source={x:Static helpers:Library.KEY_USER_LANGUAGE}}"
+                                                     Value="Thai">
+                                            <Setter Property="Text" Value="{x:Static resources:AppResources.can}"/>
+                                        </DataTrigger>
+                                    </Button.Triggers>
+                                </Button>
+                                <BoxView HeightRequest="1" BackgroundColor="LightGray" Grid.Row="1" Grid.ColumnSpan="5"/>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </StackLayout>
+
+    </Frame>
+   
+</pages:PopupPage>

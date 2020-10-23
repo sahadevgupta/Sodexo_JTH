@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:converters="clr-namespace:Sodexo_JTH.Converters"
+             xmlns:local="clr-namespace:Sodexo_JTH.PopUpControl"
+             x:Class="Sodexo_JTH.Views.DailyOrderDetailPage"
+             xmlns:translate="clr-namespace:Sodexo_JTH.Helpers"
+             Visual="Material"
+             xmlns:resources="clr-namespace:Sodexo_JTH.Resources">
+
+    <NavigationPage.TitleView>
+        <Label Text="{x:Static resources:AppResources.dodText}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" 
+             BackgroundColor="{StaticResource My_Header_Color}" 
+             FontSize="17" FontFamily="{StaticResource SansationRegular}"
+             FontAttributes="Bold"
+             TextColor="White" HorizontalTextAlignment="Center" />
+    </NavigationPage.TitleView>
+
+
+    <ContentPage.Resources>
+        <converters:BoolToStringConverter x:Key="BoolToStringConverter"/>
+        <converters:BoolToImageConverter x:Key="BoolToImageConverter"/>
+        <converters:CheckBoxConverter x:Key="CheckBoxConverter"/>
+    </ContentPage.Resources>
+    <AbsoluteLayout Padding="5" BackgroundColor="White">
+        <StackLayout  AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            Opacity="1">
+            <local:ConnectionView/>
+            <StackLayout Orientation="Horizontal">
+                <Image x:Name="sss"   Source="{converters:PlatformImage SourceImage='logoinnertouch2order.png'}" HorizontalOptions="Start" HeightRequest="60" />
+                <Image  HorizontalOptions="EndAndExpand" Source="{converters:PlatformImage SourceImage='sodexologo.png'}" HeightRequest="60" />
+            </StackLayout>
+
+            <Label  VerticalOptions="Center" HorizontalOptions="Start" 
+                    FontFamily="{StaticResource SansationRegular}"           
+                    Font="22" >
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="{x:Static resources:AppResources.txtDateText} " FontSize="22" TextColor="Black"/>
+                        <Span Text="{Binding SelectedDate,Mode=OneWay,StringFormat='{}{0:dd-MM-yyyy}'}" FontSize="Medium"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Spacing="20" Padding="10">
+
+                <!--<Label x:Name="lbl_selectward" Text="" FontFamily="{StaticResource SansationRegular}"
+                   VerticalOptions="Center" FontSize="Small"/>-->
+                <Picker x:Name="pkr_ward"  FontFamily="{StaticResource SansationRegular}"
+                    Title="{x:Static resources:AppResources.cmbsearchbywardPlaceholderText}" 
+                    ItemsSource="{Binding WardData}"
+                    SelectedItem="{Binding SelectedWard}"
+                      
+                    ItemDisplayBinding="{Binding ward_name}"
+                    HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                <!--<Label x:Name="lbl_Bed" Text="{x:Static resources:AppResources.cmbsearchbypatientPlaceholderText}" FontFamily="{StaticResource SansationRegular}"
+                   VerticalOptions="Center" FontSize="Small" />-->
+                <Picker x:Name="pkr_bed" FontFamily="{StaticResource SansationRegular}"
+                   
+                    ItemsSource="{Binding BedDetails}"
+                    ItemDisplayBinding="{Binding bed_no}"
+                    SelectedItem="{Binding SelectedBed}"
+                    Title="{x:Static resources:AppResources.cmbsearchbypatientPlaceholderText}"
+                    HorizontalOptions="FillAndExpand"  VerticalOptions="Center" />
+
+                <!--<Label x:Name="lbl_selectmealtime" Text="{x:Static resources:AppResources.mteText}" FontFamily="{StaticResource SansationRegular}"
+                   VerticalOptions="Center" FontSize="Small" />-->
+                <Picker x:Name="pkr_mealtime" FontFamily="{StaticResource SansationRegular}"
+                    ItemsSource="{Binding MealTimeList}"
+                    SelectedItem="{Binding SelectedMealTime}"
+                        Title="{x:Static resources:AppResources.mteText}"
+                        
+                    ItemDisplayBinding="{Binding meal_name}"
+                    HorizontalOptions="FillAndExpand" VerticalOptions="Center"/>
+
+            </StackLayout>
+
+
+           
+
+            <StackLayout Orientation="Horizontal" Grid.Row="7" Grid.Column="0">
+                <CheckBox  IsChecked="{Binding IsCareGiver}" WidthRequest="30">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup>
+
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Color" Value="Black"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="IsChecked">
+                                <VisualState.Setters>
+                                    <Setter Property="Color" Value="Accent"/>
+                                </VisualState.Setters>
+                            </VisualState>
+
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </CheckBox>
+                <Label VerticalTextAlignment="Center" FontSize="18" 
+                       Text="{x:Static resources:AppResources.cgContent}"/>
+
+            </StackLayout>
+            
+            <Button  x:Name="searchButton" FontFamily="{StaticResource SansationRegular}"
+                Command="{Binding SearchCommand}"
+                     VerticalOptions="CenterAndExpand"
+                     
+                     CornerRadius="5"
+                     FontSize="Medium"
+                 Text="{x:Static resources:AppResources.btnsearch1Content}" 
+                BackgroundColor="{StaticResource My_Header_Color}" 
+                TextColor="White"/>
+
+            <Grid BackgroundColor="Gray" Margin="-10,0,-10,0" HeightRequest="40">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                
+                
+                <Label FontSize="13"  x:Name="lbl0" Grid.Row="0" Grid.Column="0" />
+                <Label FontSize="13" x:Name="lbl1" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Start"   Text="{x:Static resources:AppResources.dteText}" TextColor="White" />
+                <Label FontSize="13" x:Name="lbl2" Grid.Row="0" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center"  Text="{x:Static resources:AppResources.wdText}"  TextColor="White"/>
+                <Label FontSize="13" x:Name="lbl3" Grid.Row="0" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="Center"  Text="{x:Static resources:AppResources.bdText}"  TextColor="White"/>
+                <Label FontSize="13" x:Name="lbl4" Grid.Row="0" Grid.Column="4" VerticalOptions="Center" HorizontalOptions="Center"  Text="{x:Static resources:AppResources.pneText}" TextColor="White"/>
+                <Label FontSize="13" x:Name="lbl5" Grid.Row="0" Grid.Column="5" VerticalOptions="Center" HorizontalOptions="Center"  Text="{x:Static resources:AppResources.mteText}" TextColor="White"/>
+                <Label FontSize="13" x:Name="lbl6" Grid.Row="0" Grid.Column="6" VerticalOptions="Center" HorizontalOptions="Center"  Text="{x:Static resources:AppResources.obyText}" TextColor="White"/>
+                <Label FontSize="13" x:Name="lbl7" Grid.Row="0" Grid.Column="7" VerticalOptions="Center" HorizontalOptions="Center"  Text="{x:Static resources:AppResources.verify}"  TextColor="White"/>
+            </Grid>
+
+           
+                <ListView  x:Name="mylist" ItemsSource="{Binding MealDeliveredCollection}" 
+                           CachingStrategy="RecycleElement"
+                           SeparatorColor="LightGray"
+                           MinimumHeightRequest="80"
+                           HasUnevenRows="True" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                    <Grid >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <CheckBox IsVisible="{Binding status,Converter={StaticResource CheckBoxConverter}}" 
+                                          VerticalOptions="Center"
+                                          HorizontalOptions="Start" IsChecked="{Binding is_checked}">
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup>
+
+                                            <VisualState x:Name="Normal">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Color" Value="Black"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+
+                                            <VisualState x:Name="IsChecked">
+                                                <VisualState.Setters>
+                                                    <Setter Property="Color" Value="Accent"/>
+                                                </VisualState.Setters>
+                                            </VisualState>
+
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </CheckBox>
+
+                                <Label FontSize="14"  Grid.Row="0" Grid.Column="1" x:Name="tbldate" Text="{Binding date}" VerticalOptions="Center"  />
+                                <Label FontSize="14" HorizontalOptions="Center" Grid.Row="0" Grid.Column="2" x:Name="tblward" Text="{Binding Ward}"  VerticalOptions="Center" />
+                                <Label FontSize="14" HorizontalOptions="Center" Grid.Row="0" Grid.Column="3" x:Name="tblbed" Text="{Binding Bed}"  VerticalOptions="Center" />
+                                <Label FontSize="14" HorizontalOptions="CenterAndExpand" Grid.Row="0" Grid.Column="4" x:Name="tblpname" Text="{Binding PatientNRIC}"  VerticalOptions="Center" />
+                                <Label FontSize="14" HorizontalOptions="Center" Grid.Row="0" Grid.Column="5" x:Name="tblmealtime" Text="{Binding MealTime}"  VerticalOptions="Center"/>
+                                <Label FontSize="14" HorizontalOptions="Center" Grid.Row="0" Grid.Column="6" x:Name="tblorderedby" Text="{Binding OrderBy}"  VerticalOptions="Center"/>
+                                                     
+                                <ImageButton VerticalOptions="CenterAndExpand" HorizontalOptions="Center"
+                                             IsEnabled="{Binding is_verifed,Converter={StaticResource BoolToStringConverter}}"
+                                             Grid.Row="0" Grid.Column="7"
+                                             Clicked="ScanImageTapped"
+                                             BackgroundColor="Transparent"
+                                             Source="{Binding is_verifed,Converter={StaticResource BoolToImageConverter}}"
+                                             WidthRequest="30" HeightRequest="30"/>
+
+
+                               
+
+                            </Grid>
+                                
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            <Button x:Name="btn_update" HorizontalOptions="FillAndExpand"
+                    VerticalOptions="CenterAndExpand" FontFamily="{StaticResource SansationRegular}"
+                    CornerRadius="5"
+                Text="{x:Static resources:AppResources.btnupdateContent}" FontSize="Medium"
+                        HeightRequest="60"  Command="{Binding UpdateCommand}"
+                BackgroundColor="{StaticResource My_Header_Color}" 
+                TextColor="White"  >
+                <Button.Triggers>
+                    <DataTrigger TargetType="Button"
+                                 Binding="{Binding MealDeliveredCollection.Count}" Value="0">
+                        <Setter Property="IsEnabled" Value="False"/>
+                    </DataTrigger>
+                </Button.Triggers>
+            </Button>
+        </StackLayout>
+
+        <StackLayout x:Name="loadingStack" AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                     VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="CenterAndExpand"
+            AbsoluteLayout.LayoutFlags="All" IsVisible="False">
+
+
+            <StackLayout.Triggers>
+                <DataTrigger TargetType="StackLayout"
+                             Binding="{Binding IsPageEnabled}"
+                             Value="true">
+                    <Setter Property="IsVisible" Value="True"/>
+                    <Setter Property="Opacity" Value="0.7"/>
+                </DataTrigger>
+            </StackLayout.Triggers>
+
+            <ActivityIndicator Color="Accent" x:Name="ProgressB"  IsRunning="False">
+                <ActivityIndicator.Triggers>
+                    <DataTrigger TargetType="ActivityIndicator"
+                                 Binding="{Binding Source={x:Reference loadingStack},Path=IsVisible}"
+                                 Value="true">
+                        <Setter Property="IsRunning" Value="True"/>
+                    </DataTrigger>
+                </ActivityIndicator.Triggers>
+            </ActivityIndicator>
+
+            <Label Text="{x:Static resources:AppResources.load}" FontSize="Title"
+                   IsVisible="{Binding IsVisible,Source={x:Reference ProgressB}}" 
+                   TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+        </StackLayout>
+
+        <!--<syncfusion:SfBusyIndicator 
+                x:Name="pbar" 
+                IsVisible="False" 
+                IsBusy="False" 
+                ViewBoxWidth="100" ViewBoxHeight="100"   AnimationType="DoubleCircle" TextSize="24" Title="Loading..."  TextColor="Black" 
+            AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+            AbsoluteLayout.LayoutFlags="All">
+            <syncfusion:SfBusyIndicator.Triggers>
+                <DataTrigger TargetType="syncfusion:SfBusyIndicator"
+                             Binding="{Binding IsPageEnabled}"
+                             Value="true">
+                    <Setter Property="IsVisible" Value="True"/>
+                    <Setter Property="IsBusy" Value="True"/>
+                    <Setter Property="Opacity" Value="0.7"/>
+                </DataTrigger>
+            </syncfusion:SfBusyIndicator.Triggers>
+        </syncfusion:SfBusyIndicator>-->
+    </AbsoluteLayout>
+</ContentPage>

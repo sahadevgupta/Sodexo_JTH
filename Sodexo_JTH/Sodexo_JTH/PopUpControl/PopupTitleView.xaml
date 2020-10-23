@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sodexo_JTH.PopUpControl.PopupTitleView"
+             xmlns:converters="clr-namespace:Sodexo_JTH.Converters">
+    <ContentView.Content>
+        <StackLayout IsTabStop="False" BackgroundColor="#375E97" Margin="-5,-5,-5,0" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+            
+
+            <Label HorizontalOptions="FillAndExpand" Margin="5,13.5"
+                   HorizontalTextAlignment="Center" FontFamily="{StaticResource SansationRegular}"
+            VerticalOptions="CenterAndExpand"
+             x:Name="Title"
+            FontAttributes="Bold"
+            FontSize="18" TextColor="WhiteSmoke"/>
+
+            <ImageButton Source="{converters:PlatformImage SourceImage='NBM.png'}"
+                         HorizontalOptions="End"
+                         Margin="0,0,30,0"
+                         BackgroundColor="Transparent"
+                         Clicked="ImageButton_Clicked"
+                         VerticalOptions="Center"
+                         HeightRequest="80"/>
+
+            <!--<Label Text="X" FontFamily="{StaticResource SansationRegular}"
+                   FontAttributes="Bold" 
+                   x:Name="CloseLbl" 
+                   TextColor="Red"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="End" 
+                   Margin="0,0,30,0"
+                   VerticalOptions="CenterAndExpand" FontSize="Large"/>-->
+
+            <Label x:Name="AddLbl" 
+                   FontFamily="{StaticResource SansationRegular}"
+                   HorizontalOptions="End" 
+                   Margin="0,0,10,0" 
+                   VerticalOptions="CenterAndExpand" 
+                   FontSize="18" 
+                   FontAttributes="Bold"
+                   TextColor="WhiteSmoke"/>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

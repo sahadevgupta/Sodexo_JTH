@@ -1,0 +1,1022 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="adateText" xml:space="preserve">
+    <value>วันที่เข้ารับการรักษา:</value>
+    <comment>Admission Date:</comment>
+  </data>
+  <data name="adchText" xml:space="preserve">
+    <value>ผู้ใหญ่/เด็ก:</value>
+    <comment>Adult/Child:</comment>
+  </data>
+  <data name="aeText" xml:space="preserve">
+    <value>อายุ:</value>
+    <comment>Age:</comment>
+  </data>
+  <data name="alert" xml:space="preserve">
+    <value>การเตือน</value>
+    <comment>Alert</comment>
+  </data>
+  <data name="algeText" xml:space="preserve">
+    <value>ชื่ออาหารก่อภูมิแพ้:</value>
+    <comment>Allergies:</comment>
+  </data>
+  <data name="allgeyText" xml:space="preserve">
+    <value>อาหารก่อภูมิแพ้</value>
+    <comment>Allergy</comment>
+  </data>
+  <data name="am" xml:space="preserve">
+    <value>เพิ่มเมนู</value>
+    <comment>Add to menu</comment>
+  </data>
+  <data name="ameContent" xml:space="preserve">
+    <value>เพิ่มเมนู</value>
+    <comment>Add to menu</comment>
+  </data>
+  <data name="anmText" xml:space="preserve">
+    <value>ผู้ใหญ่ / เด็ก:</value>
+    <comment>Adult/Child:</comment>
+  </data>
+  <data name="bclassText" xml:space="preserve">
+    <value>ระดับของเตียง:</value>
+    <comment>Bed Class:</comment>
+  </data>
+  <data name="bclsText" xml:space="preserve">
+    <value>ระดับของเตียง:</value>
+    <comment>Bed Class:</comment>
+  </data>
+  <data name="bdText" xml:space="preserve">
+    <value>เตียง</value>
+    <comment>Bed</comment>
+  </data>
+  <data name="bevText" xml:space="preserve">
+    <value>เครื่องดื่ม</value>
+    <comment>Bevereges</comment>
+  </data>
+  <data name="bf" xml:space="preserve">
+    <value>เกินกำหนดเวลาการสั่งอาหารเช้าล่าช้า</value>
+    <comment>Breakfast Late Cut off time exceeds</comment>
+  </data>
+  <data name="bfc" xml:space="preserve">
+    <value>เกินกำหนดเวลาการสั่งอาหารเช้า</value>
+    <comment>Breakfast Cut off time exceeds</comment>
+  </data>
+  <data name="bfco" xml:space="preserve">
+    <value>กำหนดเวลาการสั่งอาหารเช้า:</value>
+    <comment>Breakfast Cut off time:</comment>
+  </data>
+  <data name="bfeText" xml:space="preserve">
+    <value>Breakfast</value>
+    <comment>Breakfast</comment>
+  </data>
+  <data name="bfpl" xml:space="preserve">
+    <value>สั่งอาหารเช้าเรียบร้อยแล้ว</value>
+    <comment>Breakfast meal Order is already placed.</comment>
+  </data>
+  <data name="btnloginContent" xml:space="preserve">
+    <value>ส่ง</value>
+    <comment>SUBMIT</comment>
+  </data>
+  <data name="btnsearch1Content" xml:space="preserve">
+    <value>ค้นหา</value>
+    <comment>Search</comment>
+  </data>
+  <data name="btnupdateContent" xml:space="preserve">
+    <value>ปรับปรุง</value>
+    <comment>Update</comment>
+  </data>
+  <data name="can" xml:space="preserve">
+    <value>ยกเลิก</value>
+    <comment>cancel</comment>
+  </data>
+  <data name="canc" xml:space="preserve">
+    <value>คุณต้องการยกเลิกการสั่งนี้หรือไม่?</value>
+    <comment>Do you want to cancel this order?</comment>
+  </data>
+  <data name="caseText" xml:space="preserve">
+    <value>รหัสเคส:</value>
+    <comment>Case Id:</comment>
+  </data>
+  <data name="cex" xml:space="preserve">
+    <value> เกินกำหนดเวลา</value>
+    <comment>Cut off time exceeds</comment>
+  </data>
+  <data name="cgContent" xml:space="preserve">
+    <value>ผู้ดูแล</value>
+    <comment>Care Giver</comment>
+  </data>
+  <data name="chckuser" xml:space="preserve">
+    <value>โปรดตรวจสอบชื่อผู้ใช้ที่คุณป้อน</value>
+    <comment>Please check username you have entered</comment>
+  </data>
+  <data name="clearfeedmsg" xml:space="preserve">
+    <value>โปรดเลือกรายการใด ๆ จากซุป, เครื่องดื่ม, เมนูผลไม้และเลือกตัวเลือกอาหาร</value>
+    <comment>Please select any items from Soup,Beverages,Fruit menu and select Meal Option.</comment>
+  </data>
+  <data name="closeContent" xml:space="preserve">
+    <value>ปิด</value>
+    <comment>Close</comment>
+  </data>
+  <data name="cmbsearchbypatientPlaceholderText" xml:space="preserve">
+    <value>เลือกหมายเลขเตียง</value>
+    <comment>Select bed no.</comment>
+  </data>
+  <data name="cmbsearchbywardPlaceholderText" xml:space="preserve">
+    <value>เลือกหมายเลขวอร์ด</value>
+    <comment>Select ward  no.</comment>
+  </data>
+  <data name="cnContent" xml:space="preserve">
+    <value>ยกเลิก</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="cnfContent" xml:space="preserve">
+    <value>ข้อจำกัด</value>
+    <comment>Confinement</comment>
+  </data>
+  <data name="cnfeContent" xml:space="preserve">
+    <value>ยืนยัน</value>
+    <comment>Confirm</comment>
+  </data>
+  <data name="codText" xml:space="preserve">
+    <value>ยกเลิกคำสั่งซื้อ</value>
+    <comment>Cancel Order</comment>
+  </data>
+  <data name="contentdesc" xml:space="preserve">
+    <value>คุณต้องการดำเนินการเชื่อมต่อหรือไม่?</value>
+    <comment>Do you want to proceed to sync?</comment>
+  </data>
+  <data name="contentno" xml:space="preserve">
+    <value>ไม่</value>
+    <comment>No</comment>
+  </data>
+  <data name="contenttit" xml:space="preserve">
+    <value>มี</value>
+    <comment>There are</comment>
+  </data>
+  <data name="contenttit2" xml:space="preserve">
+    <value> มีคำสั่งมื้ออาหารสำหรับการซิงค์</value>
+    <comment>Meal Orders available for sync</comment>
+  </data>
+  <data name="contentyes" xml:space="preserve">
+    <value>ใช่</value>
+    <comment>Yes</comment>
+  </data>
+  <data name="cor1Text" xml:space="preserve">
+    <value>ยกเลิก</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="cor2Text" xml:space="preserve">
+    <value>ใบสั่ง</value>
+    <comment>Order</comment>
+  </data>
+  <data name="cot" xml:space="preserve">
+    <value> กำหนดเวลา:</value>
+    <comment>Cut off time:</comment>
+  </data>
+  <data name="cservText" xml:space="preserve">
+    <value>เปลี่ยนพนักงานเสิร์ฟ</value>
+    <comment>Change Server</comment>
+  </data>
+  <data name="ctText" xml:space="preserve">
+    <value>ประเภทอาหาร</value>
+    <comment>CUISINE TYPE</comment>
+  </data>
+  <data name="datText" xml:space="preserve">
+    <value>ขนาดชิ้นส่วน:</value>
+    <comment>Diet Type:</comment>
+  </data>
+  <data name="ddateText" xml:space="preserve">
+    <value>วันที่ออกจากโรงพยาบาล:</value>
+    <comment>Discharge Date:</comment>
+  </data>
+  <data name="delivered_message" xml:space="preserve">
+    <value>สถานะคำสั่งซื้อมื้ออาหารที่เลือกมีการเปลี่ยนแปลงเมื่อส่งมอบ</value>
+    <comment>Selected Meal order status changed as delivered</comment>
+  </data>
+  <data name="dessText" xml:space="preserve">
+    <value>ของหวาน</value>
+    <comment>Dessert</comment>
+  </data>
+  <data name="dietText" xml:space="preserve">
+    <value>พื้นผิวอาหาร</value>
+    <comment>DIET TEXTURE</comment>
+  </data>
+  <data name="dn" xml:space="preserve">
+    <value>เกินกำหนดเวลาการสั่งอาหารเย็นล่าช้า</value>
+    <comment>Dinner Late Cut off time exceeds</comment>
+  </data>
+  <data name="dnc" xml:space="preserve">
+    <value>เกินกำหนดเวลาการสั่งอาหารเย็น</value>
+    <comment>Dinner Cut off time exceeds</comment>
+  </data>
+  <data name="dnco" xml:space="preserve">
+    <value> กำหนดเวลาการสั่งอาหารเย็น:</value>
+    <comment>Dinner Cut off time:</comment>
+  </data>
+  <data name="dneText" xml:space="preserve">
+    <value>Dinner</value>
+    <comment>Dinner</comment>
+  </data>
+  <data name="dnpl" xml:space="preserve">
+    <value>สั่งอาหารเย็นเรียบร้อยแล้ว</value>
+    <comment>Dinner meal Order is already placed.</comment>
+  </data>
+  <data name="dobtxtText" xml:space="preserve">
+    <value>วันเดือนปีเกิด:</value>
+    <comment>DOB:</comment>
+  </data>
+  <data name="doccmnText" xml:space="preserve">
+    <value>ความเห็นแพทย์:</value>
+    <comment>Doc Comments:</comment>
+  </data>
+  <data name="dodText" xml:space="preserve">
+    <value>รายละเอียดการสั่งอาหารรายวัน</value>
+    <comment>Daily Order Detail</comment>
+  </data>
+  <data name="dosText" xml:space="preserve">
+    <value>วันที่ให้บริการ:</value>
+    <comment>Date Of Service:</comment>
+  </data>
+  <data name="dteText" xml:space="preserve">
+    <value>วันที่</value>
+    <comment>Date</comment>
+  </data>
+  <data name="DTText" xml:space="preserve">
+    <value>ถาดสำหรับทิ้ง:</value>
+    <comment>Disposable Tray:</comment>
+  </data>
+  <data name="ent" xml:space="preserve">
+    <value>ป้อนที่อยู่ IP ของเซิร์ฟเวอร์</value>
+    <comment>Enter server ip address</comment>
+  </data>
+  <data name="ent2" xml:space="preserve">
+    <value>โปรดบันทึกที่อยู่ IP ของเซิร์ฟเวอร์ / ชื่อ</value>
+    <comment>Please save server ip address/name.</comment>
+  </data>
+  <data name="entreeText" xml:space="preserve">
+    <value>ชุดอาหาร</value>
+    <comment>Entree/set menu</comment>
+  </data>
+  <data name="faText" xml:space="preserve">
+    <value>อาหารก่อภูมิแพ้:</value>
+    <comment>FOOD ALLERGIES</comment>
+  </data>
+  <data name="feedText" xml:space="preserve">
+    <value>ข้อเสนอแนะ</value>
+    <comment>Feedback</comment>
+  </data>
+  <data name="flna" xml:space="preserve">
+    <value>ไม่สามารถใช้ลิงก์คำติชม</value>
+    <comment>Feedback link not available</comment>
+  </data>
+  <data name="fluidText" xml:space="preserve">
+    <value>ความสอดคล้องของของไหล</value>
+    <comment>Fluid Consistency:</comment>
+  </data>
+  <data name="fomsg" xml:space="preserve">
+    <value>คุณเปลี่ยนการตั้งค่าของผู้ป่วย คุณต้องการลบคำสั่งซื้อในอนาคตของผู้ป่วยรายนี้หรือไม่?</value>
+    <comment>You changed the patient's settings. Do you want to delete the future orders of this patient?</comment>
+  </data>
+  <data name="FrageNr" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="gcmnText" xml:space="preserve">
+    <value>ความเห็นทั่วไป:</value>
+    <comment>Gen Comment:</comment>
+  </data>
+  <data name="genderText" xml:space="preserve">
+    <value>เพศ:</value>
+    <comment>Gender:</comment>
+  </data>
+  <data name="hlnlText" xml:space="preserve">
+    <value>ฮาลาล / ไม่ฮาลาล:</value>
+    <comment>Halal/Non-Halal:</comment>
+  </data>
+  <data name="hlText" xml:space="preserve">
+    <value>ฮาลาล:</value>
+    <comment>Halal:</comment>
+  </data>
+  <data name="ieText" xml:space="preserve">
+    <value>ส่วนผสมอื่นๆที่งด</value>
+    <comment>INGREDIENTS (Excludes)</comment>
+  </data>
+  <data name="ifu" xml:space="preserve">
+    <value>ถ้าคุณเปลี่ยนเวลามื้ออาหาร รายการที่สั่งทั้งหมดจะถูกยกเลิก คุณต้องการเปลี่ยนเวลามื้ออาหารหรือไม่?</value>
+    <comment>If you change your meal time, all selected menu items will be deleted. Do you want to change meal time?</comment>
+  </data>
+  <data name="juiceText" xml:space="preserve">
+    <value>น้ำผลไม้</value>
+    <comment>Juice</comment>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>ภาษา</value>
+  </data>
+  <data name="lateorder" xml:space="preserve">
+    <value>การสั่งซื้อล่าช้าสำเร็จเรียบร้อยแล้วโปรดติดต่อผู้ควบคุมเพื่ออนุมัติ / ปฏิเสธคำสั่งซื้อ \ n คุณต้องการส่งคำสั่งซื้ออีกรายการสำหรับผู้ป่วยรายเดียวกันหรือไม่</value>
+    <comment>Late Order is Placed Successfully , Kindly contact controller to Approve/Reject the order. \nDo you want to place another order for same patient?</comment>
+  </data>
+  <data name="le" xml:space="preserve">
+    <value> เกินกำหนดเวลาการสั่งอาหารล่าช้า</value>
+    <comment>Late Cut off time exceeds</comment>
+  </data>
+  <data name="lh" xml:space="preserve">
+    <value>เกินกำหนดเวลาการสั่งอาหารเช้าล่าช้า</value>
+    <comment>Lunch Late Cut off time exceeds</comment>
+  </data>
+  <data name="lhc" xml:space="preserve">
+    <value>เกินกำหนดเวลาการสั่งอาหารเช้า</value>
+    <comment>Lunch Cut off time exceeds</comment>
+  </data>
+  <data name="lhco" xml:space="preserve">
+    <value>กำหนดเวลาการสั่งอาหารเช้า:</value>
+    <comment>Lunch Cut off time:</comment>
+  </data>
+  <data name="lheText" xml:space="preserve">
+    <value>Lunch</value>
+    <comment>Lunch</comment>
+  </data>
+  <data name="lhpl" xml:space="preserve">
+    <value>สั่งอาหารกลางวันเรียบร้อยแล้ว</value>
+    <comment>Lunch meal Order is already placed.</comment>
+  </data>
+  <data name="load" xml:space="preserve">
+    <value>กำลังโหลด...</value>
+  </data>
+  <data name="logsure" xml:space="preserve">
+    <value>คุณแน่ใจว่าคุณต้องการที่จะออกจากระบบ?</value>
+    <comment>Are you sure you want to logout?</comment>
+  </data>
+  <data name="mc22" xml:space="preserve">
+    <value>คุณไม่สามารถสั่งอาหารได้เนื่องจากชื่อชั้นอาหารไม่ได้ใช้งาน</value>
+    <comment>You can not place meal order as meal class name is not active.</comment>
+  </data>
+  <data name="mcText" xml:space="preserve">
+    <value>ประเภทของมื้ออาหาร:</value>
+    <comment>Meal Class:</comment>
+  </data>
+  <data name="ml" xml:space="preserve">
+    <value>เปลี่ยนข้อมูลมื้ออาหารเรียบร้อย</value>
+    <comment>Meal Prefrence Changed!</comment>
+  </data>
+  <data name="ml1" xml:space="preserve">
+    <value>ยกเลิกการสั่งซื้อมื้ออาหารเรียบร้อยแล้ว</value>
+    <comment>Meal Order Successfully Cancelled</comment>
+  </data>
+  <data name="ml12" xml:space="preserve">
+    <value>ยกเลิกคำสั่งซื้อมื้ออาหารล้มเหลว</value>
+    <comment>Meal Order cancellation failed</comment>
+  </data>
+  <data name="ml2" xml:space="preserve">
+    <value>คุณต้องการเปลี่ยนสถานะหรือไม่? (มังสวิรัติ/ไม่มังสวิรัติ) / (ฮาลาล/ไม่ฮาลาล) / (อาหารก่อภูมิแพ้)</value>
+    <comment>Do you want to Change the (Veg/Nonveg)/(Halal/Non-Halal)/(Allergy) Status.</comment>
+  </data>
+  <data name="mlc" xml:space="preserve">
+    <value>การยืนยันมื้ออาหาร</value>
+    <comment>Meal confirmation</comment>
+  </data>
+  <data name="mlc2" xml:space="preserve">
+    <value>คุณต้องการยืนยันคำสั่งซื้อหรือไม่?</value>
+    <comment>Do you want to confirm order?</comment>
+  </data>
+  <data name="mo" xml:space="preserve">
+    <value>ยกเลิกการสั่งอาหาร</value>
+    <comment>Meal order cancellation!</comment>
+  </data>
+  <data name="mosText" xml:space="preserve">
+    <value>อาหารที่เลือก:</value>
+    <comment>Meal Option:</comment>
+  </data>
+  <data name="motText" xml:space="preserve">
+    <value>โหมดของการทำธุรกรรม:</value>
+    <comment>Mode of transaction</comment>
+  </data>
+  <data name="mp" xml:space="preserve">
+    <value> สั่งอาหารเรียบร้อยแล้ว</value>
+    <comment>Meal order is already placed.</comment>
+  </data>
+  <data name="msg0" xml:space="preserve">
+    <value>ซิงค์ข้อมูลหลักเรียบร้อยแล้ว</value>
+    <comment>Master data synced successfully.</comment>
+  </data>
+  <data name="msg1" xml:space="preserve">
+    <value>การสั่งอาหารเชื่อมต่อสำเร็จแล้ว</value>
+    <comment>Meal Orders Have been synced successfully</comment>
+  </data>
+  <data name="msg10" xml:space="preserve">
+    <value>ไม่สามารถเข้าระบบเซิร์ฟเวอร์ได้ กรุณาตรวจสอบสัญญาณอินเตอร์เน็ต</value>
+    <comment>Server is not accessible, please check internet connection.</comment>
+  </data>
+  <data name="msg11" xml:space="preserve">
+    <value>ไม่มีข้อมูลสำหรับเชื่อมต่อ</value>
+    <comment>No data available for sync</comment>
+  </data>
+  <data name="msg12" xml:space="preserve">
+    <value>ไม่สามารถแสดงประวัติในโหมดออฟไลน์ได้</value>
+    <comment>History cannot be shown in offline mode.</comment>
+  </data>
+  <data name="msg13" xml:space="preserve">
+    <value> อัพเดทสถานะรายการอาหารแล้ว</value>
+    <comment>Meal order status updated</comment>
+  </data>
+  <data name="msg2" xml:space="preserve">
+    <value>คุณต้องการออกจากโปรแกรมหรือไม่</value>
+    <comment>"Do you want to log-out from the application?"</comment>
+  </data>
+  <data name="msg22" xml:space="preserve">
+    <value>เฉพาะ FSA และพยาบาลเท่านั้นที่สามารถเข้าสู่ระบบในแท็บเล็ต</value>
+    <comment>Only FSA and Nurse can login in tablet.</comment>
+  </data>
+  <data name="msg2w" xml:space="preserve">
+    <value>ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง.</value>
+    <comment>Invalid user name or password.</comment>
+  </data>
+  <data name="msg3" xml:space="preserve">
+    <value>กรุณาระบุ IP Address</value>
+    <comment>Enter server ip address</comment>
+  </data>
+  <data name="msg4" xml:space="preserve">
+    <value>กรุณาเชื่อมต่อ "ข้อมูลผู้ป่วย" และ "รายการเมนู" เพื่อดำเนินการต่อ</value>
+    <comment>Please sync 'Patient Data' and 'Menu Items' from drawer menu to proceed further.</comment>
+  </data>
+  <data name="msg5" xml:space="preserve">
+    <value>คุณสามารถสั่งอาหารได้ 2 วันเท่านั้น</value>
+    <comment>You can order meal for two days only.</comment>
+  </data>
+  <data name="msg6" xml:space="preserve">
+    <value>ขออภัย คุณไม่ได้รับอนุญาตให้รับออเดอร์แรกของผู้ป่วย</value>
+    <comment>SORRY, You Are Not Authorised To Take First Order Of Patient</comment>
+  </data>
+  <data name="msg7" xml:space="preserve">
+    <value>เชื่อมต่อข้อมูลผู้ป่วยสำเร็จ</value>
+    <comment>Patient data synced successfully.</comment>
+  </data>
+  <data name="msg8" xml:space="preserve">
+    <value>ซิงค์รายการเมนูได้สำเร็จ</value>
+    <comment>Menu Items synced succeesfully.</comment>
+  </data>
+  <data name="msg9" xml:space="preserve">
+    <value>ไม่สามารถเปลี่ยนการตั้งค่าผู้ป่วยในโหมดออฟไลน์ โปรดเลิกทำการเปลี่ยนแปลงและลองอีกครั้ง</value>
+    <comment>Unable to change patient settings during offline mode. Please undo the changes and try again</comment>
+  </data>
+  <data name="mss1" xml:space="preserve">
+    <value>โปรดเลือกชื่อผู้ป่วยจากคำแนะนำก่อน</value>
+    <comment>Please select patient name from suggestions first</comment>
+  </data>
+  <data name="msText" xml:space="preserve">
+    <value>สรุปรายการอาหาร</value>
+    <comment>Meal Summary</comment>
+  </data>
+  <data name="mteText" xml:space="preserve">
+    <value>เวลามื้ออาหาร</value>
+    <comment>Meal Time</comment>
+  </data>
+  <data name="mtText" xml:space="preserve">
+    <value>ประเภทมื้ออาหาร:</value>
+    <comment>Meal Type:</comment>
+  </data>
+  <data name="nit2" xml:space="preserve">
+    <value>ไม่มีรายการสินค้า</value>
+    <comment>No Item Available</comment>
+  </data>
+  <data name="nitText" xml:space="preserve">
+    <value>ไม่มีรายการสินค้า</value>
+    <comment>No Item Available</comment>
+  </data>
+  <data name="nmText" xml:space="preserve">
+    <value>ชื่อ:</value>
+    <comment>Name:</comment>
+  </data>
+  <data name="nomealhistrory" xml:space="preserve">
+    <value>ไม่มีประวัติอาหารสำหรับผู้ป่วยรายนี้</value>
+    <comment>There is no meal history for this patient.</comment>
+  </data>
+  <data name="nricText" xml:space="preserve">
+    <value>NRIC/ID:</value>
+    <comment>NRIC/ID:</comment>
+  </data>
+  <data name="nxContent" xml:space="preserve">
+    <value>ต่อไป</value>
+    <comment>Next</comment>
+  </data>
+  <data name="obyText" xml:space="preserve">
+    <value>สั่งโดย</value>
+    <comment>Order by</comment>
+  </data>
+  <data name="odateText" xml:space="preserve">
+    <value>วันที่สั่งอาหาร</value>
+    <comment>Order Date</comment>
+  </data>
+  <data name="odtText" xml:space="preserve">
+    <value>วันที่สั่งอาหาร:</value>
+    <comment>Order Date:</comment>
+  </data>
+  <data name="offl" xml:space="preserve">
+    <value>คำสั่งซื้อถูกวางไว้ในโหมดออฟไลน์สำหรับผู้ป่วยรายนี้แล้ว</value>
+    <comment>Order is already Placed in offline mode for this Patient</comment>
+  </data>
+  <data name="offl2" xml:space="preserve">
+    <value>โปรดซิงค์ข้อมูลจากหน้าจอรายละเอียดผู้ป่วย</value>
+    <comment>Please Sync it from patient details screen.</comment>
+  </data>
+  <data name="orderstatusText" xml:space="preserve">
+    <value>สถานะการสั่งอาหาร</value>
+    <comment>Meal Order Status</comment>
+  </data>
+  <data name="oteText" xml:space="preserve">
+    <value>อื่นๆ</value>
+    <comment>OTHERS</comment>
+  </data>
+  <data name="otText" xml:space="preserve">
+    <value>อื่นๆ</value>
+    <comment>Others / Texture</comment>
+  </data>
+  <data name="pageText" xml:space="preserve">
+    <value>อายุผู้ป่วย:</value>
+    <comment>Patient Age:</comment>
+  </data>
+  <data name="paraceText" xml:space="preserve">
+    <value>เชื้อชาติผู้ป่วย:</value>
+    <comment>Patient Race:</comment>
+  </data>
+  <data name="patient" xml:space="preserve">
+    <value>อดทน</value>
+    <comment>patient</comment>
+  </data>
+  <data name="pdataText" xml:space="preserve">
+    <value>ซิงค์ข้อมูลผู้ป่วย</value>
+    <comment>Sync Patient Data</comment>
+  </data>
+  <data name="pdText" xml:space="preserve">
+    <value>รายละเอียดผู้ป่วย</value>
+    <comment>Patient Details</comment>
+  </data>
+  <data name="pinameText" xml:space="preserve">
+    <value>ข้อมูลผู้ป่วย</value>
+    <comment>Patient Information</comment>
+  </data>
+  <data name="pio" xml:space="preserve">
+    <value>อัปเดตข้อมูลผู้ป่วยแล้ว</value>
+    <comment>Updated Patient Information</comment>
+  </data>
+  <data name="pls" xml:space="preserve">
+    <value>โปรดเลือกรายการใด ๆ จากเมนู ชุดอาหาร หรือเลือกตัวเลือกอาหาร</value>
+    <comment>Please select any items from Entree menu Or select meal option.</comment>
+  </data>
+  <data name="pls11" xml:space="preserve">
+    <value>โปรดเลือกหมายเลขวอร์ดก่อน</value>
+    <comment>Please select ward number first.</comment>
+  </data>
+  <data name="plss" xml:space="preserve">
+    <value>โปรดป้อนชื่อผู้ใช้และรหัสผ่าน</value>
+    <comment>Please enter user name and password.</comment>
+  </data>
+  <data name="pmenuText" xml:space="preserve">
+    <value>เชื่อมต่อรายการเมนู</value>
+    <comment>Sync Menu Items</comment>
+  </data>
+  <data name="pmname1" xml:space="preserve">
+    <value>ข้อมูลมื้ออาหารผู้ป่วย</value>
+    <comment>Patient Meal Information</comment>
+  </data>
+  <data name="pmnameText" xml:space="preserve">
+    <value>ข้อมูลมื้ออาหารผู้ป่วย</value>
+    <comment>Patient Meal Information</comment>
+  </data>
+  <data name="pnameText" xml:space="preserve">
+    <value>ชื่อผู้ป่วย</value>
+    <comment>Patient Name</comment>
+  </data>
+  <data name="pneText" xml:space="preserve">
+    <value>ผู้ป่วย / NRIC</value>
+    <comment>Patient/NRIC</comment>
+  </data>
+  <data name="pnText" xml:space="preserve">
+    <value>ชื่อผู้ป่วย:</value>
+    <comment>Patient Name:</comment>
+  </data>
+  <data name="poContent" xml:space="preserve">
+    <value>สั่งอาหาร</value>
+    <comment>Place Order</comment>
+  </data>
+  <data name="porderdText" xml:space="preserve">
+    <value>รายละเอียดการสั่งอาหารรายวัน</value>
+    <comment>Daily Order Detail</comment>
+  </data>
+  <data name="pserText" xml:space="preserve">
+    <value>การตั้งค่าของผู้ป่วย:</value>
+    <comment>Patient Preference:</comment>
+  </data>
+  <data name="psText" xml:space="preserve">
+    <value>การตั้งค่าของผู้ป่วย:</value>
+    <comment>Patient Preference</comment>
+  </data>
+  <data name="rcText" xml:space="preserve">
+    <value>เชื้อชาติของผู้ป่วย :</value>
+    <comment>Race</comment>
+  </data>
+  <data name="relText" xml:space="preserve">
+    <value>ศาสนา:</value>
+    <comment>Religion:</comment>
+  </data>
+  <data name="remarkText" xml:space="preserve">
+    <value>หมายเหตุ</value>
+    <comment>Remark</comment>
+  </data>
+  <data name="rm" xml:space="preserve">
+    <value>เอาออก</value>
+    <comment>Remove</comment>
+  </data>
+  <data name="rm1" xml:space="preserve">
+    <value>โปรดใส่คำพูด</value>
+    <comment>Please enter remark</comment>
+  </data>
+  <data name="rmsText" xml:space="preserve">
+    <value>หมายเหตุ:</value>
+    <comment>Remarks:</comment>
+  </data>
+  <data name="sall" xml:space="preserve">
+    <value>เลือกทั้งหมด</value>
+    <comment>Select All</comment>
+  </data>
+  <data name="sbpText" xml:space="preserve">
+    <value>ค้นหาโดยชื่อผู้ป่วย</value>
+    <comment>Search By Patient Name</comment>
+  </data>
+  <data name="sbwText" xml:space="preserve">
+    <value>ค้นหาโดยหมายเลขวอร์ด</value>
+    <comment>Search By ward No.</comment>
+  </data>
+  <data name="scanned_orderid_not_match" xml:space="preserve">
+    <value>รหัสคำสั่งการสแกนไม่ตรงกัน</value>
+    <comment>Scanned order id does not match</comment>
+  </data>
+  <data name="sd" xml:space="preserve">
+    <value>การเชื่อมต่อสำเร็จ</value>
+    <comment>Sync done successfully.</comment>
+  </data>
+  <data name="searchPat" xml:space="preserve">
+    <value>ค้นหาผู้ป่วย</value>
+  </data>
+  <data name="selbedmeal" xml:space="preserve">
+    <value>กรุณาเลือก Bed &amp; MealTime เพื่อดำเนินการต่อ ..</value>
+    <comment>Please select Bed &amp; MealTime to continue..</comment>
+  </data>
+  <data name="select_ward_mealtime_first" xml:space="preserve">
+    <value>กรุณาเลือกเวลาของวอร์ดและมื้ออาหารก่อน</value>
+    <comment>Please select Ward and mealtime first.</comment>
+  </data>
+  <data name="serv" xml:space="preserve">
+    <value>การเชื่อมต่อกับเซิร์ฟเวอร์ล้มเหลวโปรดตรวจสอบ</value>
+    <comment>Connection to the server failed, please check</comment>
+  </data>
+  <data name="session" xml:space="preserve">
+    <value>เซสชันของคุณหมดอายุแล้ว กรุณาเข้าสู่ระบบอีกครั้ง</value>
+    <comment>Your session has expired. Please login again.</comment>
+  </data>
+  <data name="slText" xml:space="preserve">
+    <value>ภาษา</value>
+    <comment>Language</comment>
+  </data>
+  <data name="spdataText" xml:space="preserve">
+    <value>ซิงค์ข้อมูลผู้ป่วย</value>
+    <comment>sync patient data</comment>
+  </data>
+  <data name="spText" xml:space="preserve">
+    <value>ซุป</value>
+    <comment>Soup</comment>
+  </data>
+  <data name="srnText" xml:space="preserve">
+    <value>เลขที่</value>
+    <comment>Sr. No.</comment>
+  </data>
+  <data name="srText" xml:space="preserve">
+    <value>บทบาท</value>
+    <comment>Role</comment>
+  </data>
+  <data name="statusText" xml:space="preserve">
+    <value>สถานะ</value>
+    <comment>Status</comment>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>อาหารเฉพาะโรค</value>
+  </data>
+  <data name="sv" xml:space="preserve">
+    <value>บันทึก</value>
+    <comment>Save</comment>
+  </data>
+  <data name="sync" xml:space="preserve">
+    <value>ซิงค์ ...</value>
+    <comment>Syncing...</comment>
+  </data>
+  <data name="syncmenuitem" xml:space="preserve">
+    <value>โปรดซิงค์ 'ซิงค์รายการเมนู' จากเมนูลิ้นชักเพื่อดำเนินการต่อไป</value>
+    <comment>Please sync 'Sync Menu Items' from drawer menu to proceed further.</comment>
+  </data>
+  <data name="syncofforder" xml:space="preserve">
+    <value>ไม่มีคำสั่งซื้อแบบออฟไลน์ที่จะซิงค์</value>
+    <comment>There is no offline order to be sync.</comment>
+  </data>
+  <data name="syncoffText" xml:space="preserve">
+    <value>เชื่อมต่อการสั่งแบบออฟไลน์</value>
+    <comment>Sync Offline Order</comment>
+  </data>
+  <data name="tblkgenderText" xml:space="preserve">
+    <value>G</value>
+    <comment>G</comment>
+  </data>
+  <data name="tblkH_NHText" xml:space="preserve">
+    <value>H-NH</value>
+    <comment>H-NH</comment>
+  </data>
+  <data name="tblklastmodifiedText" xml:space="preserve">
+    <value>การสั่งอาหารล่าสุดโดย</value>
+    <comment>Last Order Taken By</comment>
+  </data>
+  <data name="tblkorderText" xml:space="preserve">
+    <value>การสั่ง</value>
+    <comment>Order</comment>
+  </data>
+  <data name="tblkRText" xml:space="preserve">
+    <value>R</value>
+    <comment>R</comment>
+  </data>
+  <data name="therText" xml:space="preserve">
+    <value>ประเภทชนิดอาหาร/อาหารเฉพาะโรค:</value>
+    <comment>Therapeutic:</comment>
+  </data>
+  <data name="thText" xml:space="preserve">
+    <value>ประเภทชนิดอาหาร / อาหารเฉพาะโรค</value>
+    <comment>THERAPEUTIC</comment>
+  </data>
+  <data name="tidText" xml:space="preserve">
+    <value>Id:</value>
+    <comment>Id:</comment>
+  </data>
+  <data name="txtamtText" xml:space="preserve">
+    <value>ราคา</value>
+    <comment>Amount</comment>
+  </data>
+  <data name="txtAppVersion" xml:space="preserve">
+    <value>เวอร์ชันแอป</value>
+  </data>
+  <data name="txtAutoSuggestBoxPlaceholderText" xml:space="preserve">
+    <value>ค้นหา</value>
+    <comment>Search</comment>
+  </data>
+  <data name="txtbedText" xml:space="preserve">
+    <value>เตียง:</value>
+    <comment>Bed:</comment>
+  </data>
+  <data name="txtblockpatientsearchText" xml:space="preserve">
+    <value>รายละเอียดผู้ป่วย</value>
+    <comment>Patient Details</comment>
+  </data>
+  <data name="txtCatText" xml:space="preserve">
+    <value>ประเภท</value>
+    <comment>Cat</comment>
+  </data>
+  <data name="txtdat" xml:space="preserve">
+    <value>หมวดหมู่/อาหารเฉพาะโรค</value>
+  </data>
+  <data name="txtDataText" xml:space="preserve">
+    <value>อัปเดตพร้อมใช้งาน</value>
+    <comment>Update Available</comment>
+  </data>
+  <data name="txtDateText" xml:space="preserve">
+    <value>วันที่:</value>
+    <comment>Date:</comment>
+  </data>
+  <data name="txtdiaContent" xml:space="preserve">
+    <value>ผู้ป่วยโรคเบาหวาน</value>
+    <comment>Diabetic</comment>
+  </data>
+  <data name="txtlogin" xml:space="preserve">
+    <value>เข้าสู่ระบบ</value>
+    <comment>login</comment>
+  </data>
+  <data name="txtloginText" xml:space="preserve">
+    <value>เข้าสู่ระบบ</value>
+    <comment>login</comment>
+  </data>
+  <data name="txtlogText" xml:space="preserve">
+    <value>ออกจากระบบ</value>
+    <comment>LogOut</comment>
+  </data>
+  <data name="txtmiText" xml:space="preserve">
+    <value> รายการเมนู</value>
+    <comment>Menu Item</comment>
+  </data>
+  <data name="txtoidText" xml:space="preserve">
+    <value>รหัสคำสั่งซื้อ:</value>
+    <comment>Order Id:</comment>
+  </data>
+  <data name="txtok" xml:space="preserve">
+    <value>ตกลง</value>
+    <comment>OK</comment>
+  </data>
+  <data name="txtpassPlaceholderText" xml:space="preserve">
+    <value>รหัสผ่าน</value>
+    <comment>Password</comment>
+  </data>
+  <data name="txtPatientSearch" xml:space="preserve">
+    <value>ค้นหาผู้ป่วย</value>
+  </data>
+  <data name="txtSyncMaster" xml:space="preserve">
+    <value>ซิงค์ข้อมูลทั้งหมดปริญญาโท</value>
+  </data>
+  <data name="txtSyncMenu" xml:space="preserve">
+    <value>ซิงค์เมนูปริญญาโท</value>
+  </data>
+  <data name="txttotText" xml:space="preserve">
+    <value>ทั้งหมด : </value>
+    <comment>Total</comment>
+  </data>
+  <data name="txtusernamePlaceholderText" xml:space="preserve">
+    <value>ชื่อผู้ใช้งาน</value>
+    <comment>user name</comment>
+  </data>
+  <data name="txtWardbedsText" xml:space="preserve">
+    <value>เตียง :</value>
+    <comment>Ward-Bed</comment>
+  </data>
+  <data name="txtWardbedText" xml:space="preserve">
+    <value>เตียง</value>
+    <comment>Ward-Bed</comment>
+  </data>
+  <data name="txtWardText" xml:space="preserve">
+    <value>วอร์ด:</value>
+    <comment>Ward:</comment>
+  </data>
+  <data name="vegText" xml:space="preserve">
+    <value>มังสวิรัติ:</value>
+    <comment>Vegeterian:</comment>
+  </data>
+  <data name="verify" xml:space="preserve">
+    <value>สอบสวน</value>
+    <comment>สอบสวน</comment>
+  </data>
+  <data name="vnText" xml:space="preserve">
+    <value>มังสวิรัติ / ไม่ใช่มังสวิรัติ:</value>
+    <comment>Veg/Non-Veg:</comment>
+  </data>
+  <data name="waitmsg" xml:space="preserve">
+    <value>โปรดรอในขณะที่เราซิงค์ข้อมูลทั้งหมด</value>
+    <comment>Please wait while we sync all data. &amp;#10;This might take some time...</comment>
+  </data>
+  <data name="wardbed" xml:space="preserve">
+    <value>วอร์ดครั้งที่ - เตียงเลขที่</value>
+    <comment>ward no - bed no</comment>
+  </data>
+  <data name="wdText" xml:space="preserve">
+    <value>วอร์ด</value>
+    <comment>Ward</comment>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>ยินดีต้อนรับ</value>
+    <comment>welcome</comment>
+  </data>
+  <data name="yc" xml:space="preserve">
+    <value>คุณไม่สามารถเลือกมากกว่า 1 รายการ</value>
+    <comment>You can't select more than one item.</comment>
+  </data>
+  <data name="ycn" xml:space="preserve">
+    <value>ยกเลิกการสั่งอาหาร คุณต้องการสั่งอาหารใหม่ให้ผู้ป่วยนี้หรือไม่?</value>
+    <comment>Your order is cancelled. Do you want to place order for same patient?</comment>
+  </data>
+  <data name="yo" xml:space="preserve">
+    <value>ยืนยันการสั่งอาหาร คุณต้องการสั่งอาหารอีกรายการให้ผู้ป่วยนี้หรือไม่?</value>
+    <comment>Your order is confirmed. Do you want to place another order for same patient?</comment>
+  </data>
+  <data name="yoff" xml:space="preserve">
+    <value>การสั่งอาหารของคุณถูกบันทึกแล้ว และจะได้รับการยืนยันเมื่อใช้งานอินเตอร์เน็ตได้ และเชื่อมต่อกับเมนู คุณต้องการสั่งอาหารให้กับผู้ป่วยนี้หรือไม่?</value>
+    <comment>Your order is Saved Locally ,it will be confirmed when Internet is available and syncing from menu bar. Do you want to place order for same patient?</comment>
+  </data>
+  <data name="yon" xml:space="preserve">
+    <value>การสั่งอาหารของคุณไม่ได้รับการยืนยัน เนื่องจากมีปัญหาในการดำเนินการ กรุณาตรวจสอบการเชื่อมต่ออินเตอร์เน็ต</value>
+    <comment>Your order is not confirmed, there is some problem to process your request. Please check your internet connection.</comment>
+  </data>
+  <data name="yor" xml:space="preserve">
+    <value>คำสั่งซื้อของคุณไม่ได้รับการยืนยันมีปัญหาในการดำเนินการตามคำขอของคุณ โปรดตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณ</value>
+    <comment>Your order is not confirmed, there is some problem to process your request. Please check your internet connection</comment>
+  </data>
+  <data name="yun" xml:space="preserve">
+    <value>คุณมีรายการที่ยังไม่ได้เลือก</value>
+    <comment>You have un-selected</comment>
+  </data>
+</root>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:local="clr-namespace:Sodexo_JTH.PopUpControl"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:converters="clr-namespace:Sodexo_JTH.Converters"
+             x:Class="Sodexo_JTH.Views.FeedBackPage">
+
+    <NavigationPage.TitleView>
+
+        <Label Text="Feedback" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" 
+             BackgroundColor="{StaticResource My_Header_Color}" 
+             FontSize="17" FontFamily="{StaticResource SansationRegular}"
+             FontAttributes="Bold"
+             TextColor="White" HorizontalTextAlignment="Center" />
+
+    </NavigationPage.TitleView>
+    <ScrollView>
+        <StackLayout>
+            <local:ConnectionView/>
+            <StackLayout Orientation="Horizontal">
+                <Image x:Name="sss"   Source="{converters:PlatformImage SourceImage='logoinnertouch2order.png'}" HorizontalOptions="Start" HeightRequest="60" />
+                <Image  HorizontalOptions="EndAndExpand" Source="{converters:PlatformImage SourceImage='sodexologo.png'}" HeightRequest="60" />
+            </StackLayout>
+        
+        
+         <Grid VerticalOptions="StartAndExpand">
+                <ProgressBar Progress="0.2"  
+                 HorizontalOptions="FillAndExpand"  
+                 x:Name="progress"  
+                 IsVisible="True"/>
+                <WebView x:Name="Webview"  
+             Navigating="OnNavigating"  
+             Navigated="OnNavigated"  
+             VerticalOptions="FillAndExpand"/>
+
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

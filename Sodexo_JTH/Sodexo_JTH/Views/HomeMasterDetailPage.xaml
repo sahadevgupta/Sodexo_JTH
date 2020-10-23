@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+                  xmlns:local="clr-namespace:Sodexo_JTH.Views"
+                  prism:ViewModelLocator.AutowireViewModel="True"
+                  x:Class="Sodexo_JTH.Views.HomeMasterDetailPage"
+                  MasterBehavior="Popover"
+                  Title="&#x200B;"
+                  xmlns:resources="clr-namespace:Sodexo_JTH.Resources"
+                  xmlns:staticfn="clr-namespace:Sodexo_JTH.Helpers"
+                  xmlns:converters="clr-namespace:Sodexo_JTH.Converters">
+    
+    <MasterDetailPage.Master>
+        <ContentPage Title=" " IconImageSource="{OnPlatform iOS=reveal-icon.png}">
+          
+                <StackLayout >
+
+                <FlexLayout AlignItems="Start" Direction="Row"
+                    Wrap="Wrap"
+                    BackgroundColor="#1e90ff"
+                    JustifyContent="SpaceBetween">
+                    <Image Margin="0,10,0,0" WidthRequest="100"  HeightRequest="100" HorizontalOptions="Start" Source="{converters:PlatformImage SourceImage='defaultprofile.png'}" FlexLayout.Basis="100%"/>
+
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Margin="10,0" FlexLayout.Basis="100%">
+                        <StackLayout HorizontalOptions="FillAndExpand">
+                            <Label VerticalOptions="Center" HorizontalOptions="FillAndExpand" FontFamily="{StaticResource SansationRegular}"
+                                  TextColor="White">
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="{x:Static resources:AppResources.welcome}"/>
+                                        <Span Text="," />
+                                        <Span Text=" "/>
+                                        <Span Text="{x:Static staticfn:Library.KEY_USER_FIRST_NAME}" FontAttributes="Bold" />
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+
+                            <Label FontFamily="{StaticResource SansationRegular}"  Text="{x:Static staticfn:Library.KEY_USER_ROLE}" TextColor="White"  FontAttributes="Bold" HorizontalOptions="FillAndExpand" />
+                            <Label FontFamily="{StaticResource SansationRegular}" Text="{x:Static staticfn:Library.KEY_USER_SiteCode}" TextColor="White"  FontAttributes="Bold" HorizontalOptions="FillAndExpand"  />
+                        </StackLayout>
+                      
+                        <Label Text="{Binding Source={x:Static staticfn:Library.ServerName}}" HorizontalOptions="EndAndExpand" 
+                       VerticalOptions="EndAndExpand" FontFamily="{StaticResource SansationRegular}"
+                       VerticalTextAlignment="Center"
+                       HorizontalTextAlignment="Center"
+                               FontAttributes="Bold"
+                       FontSize="Medium"
+                       HeightRequest="50"
+                       WidthRequest="50"
+                       Margin="10"
+                       BackgroundColor="#ffffba"/>
+
+                    </StackLayout>
+
+
+                    <BoxView Margin="0,10,0,0" HeightRequest="1" BackgroundColor="#E8E8E8" FlexLayout.Basis="100%"/>
+                </FlexLayout>
+
+                <ScrollView >
+                    <StackLayout Spacing="15" Margin="20,20,20,0">
+                        
+                            <StackLayout Orientation="Horizontal"  VerticalOptions="Center">
+                                <StackLayout.GestureRecognizers >
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"   CommandParameter="Patient_Search"  NumberOfTapsRequired="1"/>
+                                </StackLayout.GestureRecognizers>
+                            <Image WidthRequest="25" HeightRequest="25" Source="{converters:PlatformImage SourceImage='patient_search.png'}"/>
+                                <Label  Margin="0,0,0,0" VerticalTextAlignment="Center" FontFamily="{StaticResource SansationRegular}"
+                                        Text="{x:Static resources:AppResources.txtPatientSearch}" TextColor="Black"  HorizontalOptions="Start"   FontAttributes="Bold" />
+                            </StackLayout>
+
+                            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>
+                       
+                       
+                            <StackLayout Orientation="Horizontal"  VerticalOptions="Center">
+                                <StackLayout.GestureRecognizers >
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="Patient" NumberOfTapsRequired="1"/>
+                                </StackLayout.GestureRecognizers>
+                            <Image WidthRequest="25" HeightRequest="25" Source="{converters:PlatformImage SourceImage='sync.png'}"/>
+                            <Label  Margin="0,0,0,0" VerticalTextAlignment="Center" Text="{x:Static resources:AppResources.spdataText}" FontFamily="{StaticResource SansationRegular}"
+                                        TextColor="Black"  HorizontalOptions="Start"   FontAttributes="Bold" />
+                            </StackLayout>
+
+                            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>
+                      
+                       
+                            <StackLayout Orientation="Horizontal"  VerticalOptions="Center">
+                                <StackLayout.GestureRecognizers >
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="Master" NumberOfTapsRequired="1"/>
+                                </StackLayout.GestureRecognizers>
+                            <Image WidthRequest="25" HeightRequest="25" Source="{converters:PlatformImage SourceImage='sync.png'}"/>
+                                <Label  Margin="0,0,0,0" LineBreakMode="WordWrap" FontFamily="{StaticResource SansationRegular}"
+                                        VerticalTextAlignment="Center" Text="{x:Static resources:AppResources.txtSyncMaster}" 
+                                        TextColor="Black"  HorizontalOptions="Start"   FontAttributes="Bold" />
+                                <Label x:Name="mastervis"   IsVisible="{Binding IsMasterAvailable}"   
+                                       VerticalTextAlignment="Center"   FontFamily="{StaticResource SansationRegular}"
+                                       LineBreakMode="WordWrap" 
+                                       Margin="0,0,10,0"
+                                       VerticalOptions="Center" Text="{x:Static resources:AppResources.txtDataText}" TextColor="Black"  
+                                       HorizontalOptions="EndAndExpand"  FontSize="12" FontAttributes="Bold" 
+                                       HeightRequest="31" WidthRequest="60" />
+
+                            </StackLayout>
+                            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>
+                      
+
+                       
+                            <StackLayout Orientation="Horizontal"  VerticalOptions="Center">
+                                <StackLayout.GestureRecognizers >
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="Menu"  NumberOfTapsRequired="1"/>
+                                </StackLayout.GestureRecognizers>
+                            <Image WidthRequest="25" HeightRequest="25" Source="{converters:PlatformImage SourceImage='sync.png'}"/>
+                                <Label  Margin="0,0,0,0" VerticalTextAlignment="Center" FontFamily="{StaticResource SansationRegular}"
+                                        Text="{x:Static resources:AppResources.txtSyncMenu}" TextColor="Black"  
+                                        HorizontalOptions="Start"   FontAttributes="Bold" />
+                                <Label x:Name="menuvis" IsVisible="{Binding IsMenuAvailable}"  FontFamily="{StaticResource SansationRegular}"
+                                       LineBreakMode="WordWrap" 
+                                       VerticalOptions="Center" 
+                                       Margin="0,0,10,0"
+                                       Text="{x:Static resources:AppResources.txtDataText}" TextColor="#2a295c"  HorizontalOptions="EndAndExpand"  FontSize="12" FontAttributes="Bold" HeightRequest="31" WidthRequest="60" />
+
+                            </StackLayout>
+                            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>
+                       
+                     
+                            <StackLayout Orientation="Horizontal"  VerticalOptions="Center">
+                                <StackLayout.GestureRecognizers >
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="Offline"  NumberOfTapsRequired="1"/>
+                                </StackLayout.GestureRecognizers>
+                            <Image WidthRequest="25" HeightRequest="25" Source="{converters:PlatformImage SourceImage='sync.png'}"/>
+                                <Label FontFamily="{StaticResource SansationRegular}" Margin="0,0,0,0" VerticalTextAlignment="Center" 
+                                       Text="{x:Static resources:AppResources.syncoffText}" TextColor="Black"  HorizontalOptions="Start"  FontAttributes="Bold" />
+                                <Button FontFamily="{StaticResource SansationRegular}"  x:Name="txtofflinecount" BorderColor="Transparent"   BackgroundColor="Red"
+                               Text="{Binding OrderCount}"
+                               TextColor="White"
+                               FontSize="Micro"
+                               BorderWidth="1"
+                               BorderRadius="15"
+                            WidthRequest="40"
+                            HeightRequest="30">
+                                    <Button.Triggers>
+                                        <DataTrigger TargetType="Button"
+                                                     Binding="{Binding OrderCount}"
+                                                     Value="0">
+                                            <Setter Property="IsVisible" Value="False"/>
+                                        </DataTrigger>
+                                    </Button.Triggers>
+                                </Button>
+
+
+                            </StackLayout>
+                            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>
+                       
+                       
+                            <StackLayout Orientation="Horizontal"  VerticalOptions="Center">
+                                <StackLayout.GestureRecognizers >
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="Order"   NumberOfTapsRequired="1"/>
+                                </StackLayout.GestureRecognizers>
+                            <Image WidthRequest="25" HeightRequest="25" Source="{converters:PlatformImage SourceImage='order_details.png'}"/>
+                                <Label FontFamily="{StaticResource SansationRegular}" Margin="0,0,0,0" VerticalTextAlignment="Center"
+                                        Text="{x:Static resources:AppResources.dodText}" TextColor="Black"  HorizontalOptions="Start"  FontAttributes="Bold" />
+                            </StackLayout>
+                            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>
+                      
+                        
+                       
+                            <!--<StackLayout Orientation="Horizontal"  VerticalOptions="Center">
+                                <StackLayout.GestureRecognizers >
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="OrderStatus"  NumberOfTapsRequired="1"/>
+                                </StackLayout.GestureRecognizers>
+                                <Image WidthRequest="15" HeightRequest="15" Source="setting.png"/>
+                                <Label FontFamily="{StaticResource SansationRegular}" Margin="0,0,0,0" VerticalTextAlignment="Center" 
+                                        Text="{staticfn:Translate orderstatusText}" TextColor="Black"  HorizontalOptions="Start"   FontAttributes="Bold" />
+
+                            </StackLayout>
+                            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>-->
+                       
+                       
+                            <StackLayout Orientation="Horizontal"  VerticalOptions="Center">
+                                <StackLayout.GestureRecognizers >
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="Feed" NumberOfTapsRequired="1"/>
+                                </StackLayout.GestureRecognizers>
+                                <Image WidthRequest="25" VerticalOptions="Center" HeightRequest="25" Source="{converters:PlatformImage SourceImage='feeback.png'}"/>
+                                <Label FontFamily="{StaticResource SansationRegular}" Margin="0,0,0,0" VerticalTextAlignment="Center" 
+                                        Text="{x:Static resources:AppResources.feedText}" TextColor="Black"  HorizontalOptions="Start"  FontAttributes="Bold" />
+                            </StackLayout>
+                            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>
+                       
+
+                     
+                            <StackLayout Orientation="Horizontal"  VerticalOptions="Center">
+                                <StackLayout.GestureRecognizers >
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="LogOut"  NumberOfTapsRequired="1"/>
+                                </StackLayout.GestureRecognizers>
+                            <Image WidthRequest="25" HeightRequest="25" Source="{converters:PlatformImage SourceImage='patient_logout.png'}"/>
+                            <Label FontFamily="{StaticResource SansationRegular}" Margin="0,0,0,0" VerticalTextAlignment="Center" Text="{x:Static resources:AppResources.txtlogText}"
+                                        TextColor="Black"  HorizontalOptions="Start"   FontAttributes="Bold" />
+
+                            </StackLayout>
+                            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>
+                       
+                        
+                       
+                            <StackLayout Orientation="Horizontal"  VerticalOptions="Center">
+
+                            <Image WidthRequest="25" HeightRequest="25" Source="info.png"/>
+                                <Label FontFamily="{StaticResource SansationRegular}" Margin="0,0,0,0" VerticalTextAlignment="Center"  
+                                        TextColor="Black"  HorizontalOptions="Start"   FontAttributes="Bold" >
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                        <Span Text="{x:Static resources:AppResources.txtAppVersion}"/>
+                                            <Span Text=" 4.0.7" TextColor="IndianRed"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </StackLayout>
+                            <BoxView Color="Black" WidthRequest ="100" HeightRequest="1"/>
+                       
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+                
+            
+        </ContentPage>
+    </MasterDetailPage.Master>
+    
+    <MasterDetailPage.Detail >
+        <NavigationPage >
+            <x:Arguments>
+                    <local:PatientSearchPage  />
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+    
+</MasterDetailPage>

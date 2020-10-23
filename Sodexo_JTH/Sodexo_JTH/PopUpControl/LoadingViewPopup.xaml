@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<popupPage:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                     xmlns:popupPage="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                     BackgroundColor="Transparent"
+                     xmlns:helpers="clr-namespace:Sodexo_JTH.Helpers"
+                     xmlns:UiTemplate ="clr-namespace:Sodexo_JTH.PopUpControl"
+                     xmlns:resources="clr-namespace:Sodexo_JTH.Resources"
+             x:Class="Sodexo_JTH.PopUpControl.LoadingViewPopup">
+    <Frame VerticalOptions="Center" HorizontalOptions="Center" Visual="Material" BorderColor="Silver"
+           CornerRadius="10" Margin="20" BackgroundColor="White"
+           Padding="20" HasShadow="True">
+    <StackLayout >
+
+        <ActivityIndicator Color="IndianRed" x:Name="ProgressB"  IsRunning="True"/>
+
+        <Label Text="{x:Static resources:AppResources.sync}" FontSize="Subtitle"
+                   IsVisible="{Binding IsVisible,Source={x:Reference ProgressB}}" 
+                   TextColor="IndianRed" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+
+        <UiTemplate:LoadingScreen x:Name="prog" LoadingText="Please wait while we sync all data. &#10;This might take some time..."/>
+
+    </StackLayout>
+    </Frame>
+</popupPage:PopupPage>

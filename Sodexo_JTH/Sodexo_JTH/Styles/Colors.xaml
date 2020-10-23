@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+                    xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+              x:Class="Sodexo_JTH.Styles.Colors">
+
+
+    <!-- COLORS -->
+    <Color x:Key="My_Header_Color">#2a295c</Color>
+    <Color x:Key="My_Button_Color">#2a295c</Color>
+    <Color x:Key="My_Button_Foreground">#f8f2f2</Color>
+
+    <Style TargetType="NavigationPage">
+        <Setter Property="BarBackgroundColor" Value="#2a295c" />
+        <Setter Property="BarTextColor" Value="White" />
+    </Style>
+
+    <Style TargetType="Button">
+        <Setter Property="android:Button.UseDefaultPadding" Value="True"/>
+        <Setter Property="android:Button.UseDefaultShadow" Value="True"/>
+    </Style>
+    
+</ResourceDictionary>

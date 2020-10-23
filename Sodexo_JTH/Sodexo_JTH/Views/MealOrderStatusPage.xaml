@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             xmlns:local="clr-namespace:Sodexo_JTH.PopUpControl"
+             x:Class="Sodexo_JTH.Views.MealOrderStatusPage"
+             xmlns:converters="clr-namespace:Sodexo_JTH.Converters"
+             xmlns:translate="clr-namespace:Sodexo_JTH.Helpers"
+            xmlns:resources="clr-namespace:Sodexo_JTH.Resources" >
+
+    <NavigationPage.TitleView>
+        <Label Text="Meal Order Status" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" 
+             BackgroundColor="{StaticResource My_Header_Color}" 
+             FontSize="17"
+               FontFamily="{StaticResource SansationRegular}"
+             FontAttributes="Bold"
+             TextColor="White" HorizontalTextAlignment="Center" />
+    </NavigationPage.TitleView>
+
+    <AbsoluteLayout Padding="10" BackgroundColor="White">
+        <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            Opacity="1">
+            <local:ConnectionView/>
+            <StackLayout Orientation="Horizontal">
+                <Image x:Name="sss"   Source="{converters:PlatformImage SourceImage='logoinnertouch2order.png'}" HorizontalOptions="Start" HeightRequest="60" />
+                <Image  HorizontalOptions="EndAndExpand" Source="{converters:PlatformImage SourceImage='sodexologo.png'}" HeightRequest="60" />
+            </StackLayout>
+            <StackLayout BackgroundColor="White" Orientation="Horizontal">
+                <Label x:Name="txt_date" Text="{x:Static resources:AppResources.txtDateText}" FontFamily="{StaticResource SansationRegular}"
+                               VerticalOptions="Center" HorizontalOptions="Start" 
+                               TextColor="Black" Font="22" />
+            <DatePicker x:Name="dt_picker" VerticalOptions="Center" Date="{Binding SelectedDate}"/>
+        </StackLayout>
+        
+        <StackLayout Orientation="Horizontal">
+
+                <Label x:Name="lbl_selectward" Text="{x:Static resources:AppResources.cmbsearchbywardPlaceholderText}" FontFamily="{StaticResource SansationRegular}"
+                   VerticalOptions="Center" />
+            
+                <Picker x:Name="pkr_ward"  ItemsSource="{Binding WardData}" FontFamily="{StaticResource SansationRegular}"
+                    SelectedItem="{Binding SelectedWard}"
+                    ItemDisplayBinding="{Binding ward_name}"
+                    WidthRequest="100"
+                    Title="Select Ward"
+                    HorizontalOptions="StartAndExpand" VerticalOptions="Center" />
+
+                <Label x:Name="lbl_status" Text="{x:Static resources:AppResources.statusText}" FontFamily="{StaticResource SansationRegular}"
+                   VerticalOptions="Center" />
+            
+                <Picker x:Name="pkr_status" FontFamily="{StaticResource SansationRegular}"
+                    ItemsSource="{Binding StatusList}"
+                    SelectedItem="{Binding SelectedMealStatus}"
+                    WidthRequest="100"
+                    Title="Select Meal Status"
+                    HorizontalOptions="StartAndExpand"  VerticalOptions="Center" />
+                <Label x:Name="lbl_selectmealtime" Text="{x:Static resources:AppResources.mteText}" FontFamily="{StaticResource SansationRegular}"
+                   VerticalOptions="Center"/>
+                <Picker x:Name="pkr_mealtime" FontFamily="{StaticResource SansationRegular}"
+                    ItemsSource="{Binding MealTimeList}"
+                    SelectedItem="{Binding SelectedMealTime}"
+                    ItemDisplayBinding="{Binding meal_name}"
+                    
+                    Title="Select Meal Time"
+                    HorizontalOptions="StartAndExpand" VerticalOptions="Center"/>
+        </StackLayout>
+
+            <Button  x:Name="searchButton" FontFamily="{StaticResource SansationRegular}"
+                Command="{Binding SearchCommand}"
+                HeightRequest="40" VerticalOptions="CenterAndExpand" 
+                 FontSize="Medium"
+                HorizontalOptions="FillAndExpand" Text="{x:Static resources:AppResources.btnsearch1Content}" 
+                CornerRadius="5" BackgroundColor="{StaticResource My_Header_Color}" 
+                TextColor="White"/>
+
+        <Grid BackgroundColor="Gray" Margin="-10,0,-10,0" HeightRequest="50">
+            <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label FontFamily="{StaticResource SansationRegular}" FontAttributes="Bold" 
+                       Grid.Row="0" Grid.Column="0" 
+                       Text="{x:Static resources:AppResources.srnText}" VerticalOptions="Center" 
+                        HorizontalOptions="Center" TextColor="White" />
+                <Label FontFamily="{StaticResource SansationRegular}" FontAttributes="Bold" Grid.Row="0" 
+                       Grid.Column="1" Text="{x:Static resources:AppResources.dteText}" VerticalOptions="Center" 
+                        HorizontalOptions="Center" TextColor="White" />
+                <Label FontFamily="{StaticResource SansationRegular}" 
+                       FontAttributes="Bold" Grid.Row="0" Grid.Column="2" 
+                       Text="{x:Static resources:AppResources.txtWardbedText}" VerticalOptions="Center" HorizontalOptions="Center" TextColor="White"/>
+                <Label FontFamily="{StaticResource SansationRegular}" FontAttributes="Bold" 
+                       Grid.Row="0" Grid.Column="3" 
+                       Text="{x:Static resources:AppResources.pnameText}" VerticalOptions="Center"  HorizontalOptions="Center" TextColor="White"/>
+                <Label FontFamily="{StaticResource SansationRegular}" FontAttributes="Bold" 
+                       Grid.Row="0" Grid.Column="4" Text="{x:Static resources:AppResources.statusText}"
+                       VerticalOptions="Center"  HorizontalOptions="Center" TextColor="White"/>
+
+            </Grid>
+
+            <ListView ItemsSource="{Binding MealOrderStatusCollection}"  x:Name="mylist" 
+                      CachingStrategy="RecycleElement"
+                      HasUnevenRows="True" SelectionMode="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                                <Grid MinimumHeightRequest="50">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="1"/>
+                                </Grid.RowDefinitions>
+
+                                <Label FontFamily="{StaticResource SansationRegular}" TextColor="Black" Grid.Row="0" Grid.Column="0" x:Name="tbldate" Text="{Binding SrNo}" VerticalOptions="Center" HorizontalTextAlignment="Center" />
+                                <Label FontFamily="{StaticResource SansationRegular}" TextColor="Black" Grid.Row="0" Grid.Column="1" x:Name="tblward" Text="{Binding meal_order_date}" HorizontalTextAlignment="Center"  VerticalOptions="Center" />
+                                <Label FontFamily="{StaticResource SansationRegular}" TextColor="Black" Grid.Row="0" Grid.Column="2" x:Name="tblbed" Text="{Binding WardBed}" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                                <Label FontFamily="{StaticResource SansationRegular}" TextColor="Black" Grid.Row="0" Grid.Column="3" x:Name="tblpname" Text="{Binding patient_name}" HorizontalTextAlignment="Center" VerticalOptions="Center" />
+                                <Label FontFamily="{StaticResource SansationRegular}" TextColor="Black" Grid.Row="0" Grid.Column="4" x:Name="tblmealtime" Text="{Binding OrderStatus}" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
+                                <BoxView HeightRequest="1" Grid.Row="1" Grid.ColumnSpan="5" BackgroundColor="LightGray"/>
+                            </Grid>
+                            
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Triggers>
+                    <DataTrigger TargetType="ListView" Binding="{Binding IsPageEnabled}" Value="True">
+                        <Setter Property="IsVisible" Value="False"/>
+                    </DataTrigger>
+                </ListView.Triggers>
+            </ListView>
+           
+        </StackLayout>
+
+        <StackLayout x:Name="loadingStack" AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                     VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="CenterAndExpand"
+            AbsoluteLayout.LayoutFlags="All" IsVisible="False">
+
+
+            <StackLayout.Triggers>
+                <DataTrigger TargetType="StackLayout"
+                             Binding="{Binding IsPageEnabled}"
+                             Value="true">
+                    <Setter Property="IsVisible" Value="True"/>
+                    <Setter Property="Opacity" Value="0.7"/>
+                </DataTrigger>
+            </StackLayout.Triggers>
+
+            <ActivityIndicator Color="Accent" x:Name="ProgressB"  IsRunning="False">
+                <ActivityIndicator.Triggers>
+                    <DataTrigger TargetType="ActivityIndicator"
+                                 Binding="{Binding Source={x:Reference loadingStack},Path=IsVisible}"
+                                 Value="true">
+                        <Setter Property="IsRunning" Value="True"/>
+                    </DataTrigger>
+                </ActivityIndicator.Triggers>
+            </ActivityIndicator>
+
+            <Label Text="{x:Static resources:AppResources.load}" FontSize="Title"
+                   IsVisible="{Binding IsVisible,Source={x:Reference ProgressB}}" 
+                   TextColor="Black" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+        </StackLayout>
+        
+       
+    </AbsoluteLayout>
+</ContentPage>

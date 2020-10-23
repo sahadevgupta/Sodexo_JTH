@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Sodexo_JTH.PopUpControl.LoadingScreen">
+  <ContentView.Content>
+        <StackLayout >
+
+            <Label Text="{Binding Progress,Source={x:Reference ProgressB},StringFormat='{}{0:P}'}" 
+                   IsVisible="{Binding IsVisible,Source={x:Reference ProgressB}}" 
+                   TextColor="Accent" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+
+            <ProgressBar x:Name="ProgressB" ProgressColor="Accent"   />
+            
+
+
+            <Label x:Name="label" Text="{Binding LoadingText}" FontAttributes="Bold" />
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

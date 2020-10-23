@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Sodexo_JTH.PopUpControl.MealInfoPopUp"
+    Padding="10"
+    xmlns:helpers="clr-namespace:Sodexo_JTH.Helpers"
+    xmlns:converters="clr-namespace:Sodexo_JTH.Converters"
+    xmlns:resources="clr-namespace:Sodexo_JTH.Resources"
+    xmlns:UiTemplates="clr-namespace:Sodexo_JTH.PopUpControl">
+
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="ImageConverter"/>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+
+
+   
+
+        <Frame Padding="3" BackgroundColor="White" BorderColor="Transparent" VerticalOptions="Center" HorizontalOptions="Center">
+
+            <Frame.Resources>
+                <Style x:Key="PopupView" TargetType="View">
+
+                    <Setter Property="BackgroundColor" Value="Transparent" />
+                    <Setter Property="VerticalOptions" Value="Center" />
+
+
+                    <Setter Property="HorizontalOptions">
+                        <Setter.Value>
+                            <OnIdiom
+                            x:TypeArguments="LayoutOptions"
+                            Desktop="Center"
+                            Phone="FillAndExpand"
+                            TV="Center"
+                            Tablet="CenterAndExpand"
+                            Watch="FillAndExpand" />
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Frame.Resources>
+
+
+            <StackLayout Style="{StaticResource PopupView}">
+
+            <UiTemplates:PopupTitleView x:Name="titlelbl"  Grid.ColumnSpan="2" Close="Titlelbl_Close"/>
+
+                <Grid BackgroundColor="#65676A" Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="40"/>
+
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.Resources>
+                        <Style TargetType="Label">
+                            <Setter Property="FontAttributes" Value="Bold"/>
+                            <Setter Property="FontSize" Value="17"/>
+                            <Setter Property="TextColor" Value="White"/>
+                            <Setter Property="VerticalOptions" Value="Center"/>
+                            <Setter Property="HorizontalOptions" Value="Center"/>
+                        <Setter Property="FontFamily" Value="StaticResource SansationRegular}"/>
+                    </Style>
+                    </Grid.Resources>
+
+                <Label Grid.Row="0"  LineBreakMode="WordWrap" Text="{x:Static resources:AppResources.odateText}"/>
+                <Label Grid.Row="0" Grid.Column="1"  LineBreakMode="WordWrap" Text="{x:Static resources:AppResources.entreeText}"/>
+                <Label Grid.Row="0" Grid.Column="2"  LineBreakMode="WordWrap" Text="{x:Static resources:AppResources.spText}"/>
+                <Label Grid.Row="0" Grid.Column="3"  LineBreakMode="WordWrap" Text="{x:Static resources:AppResources.bevText}"/>
+                <Label Grid.Row="0" Grid.Column="4"  LineBreakMode="WordWrap" Text="{x:Static resources:AppResources.juiceText}"/>
+                <Label Grid.Row="0" Grid.Column="5"  LineBreakMode="WordWrap" Text="{x:Static resources:AppResources.dessText}"/>
+                <Label Grid.Row="0" Grid.Column="6"  LineBreakMode="WordWrap" Text="{x:Static resources:AppResources.remarkText}"/>
+
+
+                </Grid>
+
+            <CollectionView SelectionMode="None"
+                            x:Name="meallist"
+                            MinimumHeightRequest="100">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="40"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+
+                            <Grid.Resources>
+                                <Style TargetType="Label">
+
+                                    <Setter Property="HorizontalOptions" Value="Center"/>
+                                </Style>
+                            </Grid.Resources>
+
+                            <Label  LineBreakMode="WordWrap" 
+                                        Text="{Binding orderdate}"/>
+                            <Label  Grid.Column="1"  
+                                            LineBreakMode="WordWrap" 
+                                            Text="{Binding entreeid}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                                     Binding="{Binding entreeid}"
+                                                     Value="">
+                                        <Setter Property="Text" Value="---"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+
+                            <Label Grid.Column="2"   
+                                           LineBreakMode="WordWrap" 
+                                           Text="{Binding soupid}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                                     Binding="{Binding soupid}"
+                                                     Value="">
+                                        <Setter Property="Text" Value="---"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Label  Grid.Column="3"  
+                                            LineBreakMode="WordWrap" 
+                                            Text="{Binding beveragesid}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                                     Binding="{Binding beveragesid}"
+                                                     Value="">
+                                        <Setter Property="Text" Value="---"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Label  Grid.Column="4"  
+                                            LineBreakMode="WordWrap" 
+                                            Text="{Binding juiceid}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                                     Binding="{Binding juiceid}"
+                                                     Value="">
+                                        <Setter Property="Text" Value="---"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+
+                            <Label  Grid.Column="5"  
+                                            LineBreakMode="WordWrap" 
+                                            Text="{Binding dessertid}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                                     Binding="{Binding dessertid}"
+                                                     Value="">
+                                        <Setter Property="Text" Value="---"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+
+                            <Label  Grid.Column="6"  
+                                            LineBreakMode="WordWrap" 
+                                            Text="{Binding remarkid}">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label"
+                                                     Binding="{Binding remarkid}"
+                                                     Value="">
+                                        <Setter Property="Text" Value="---"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+
+                            <Image WidthRequest="75" 
+                                           Grid.Column="7" 
+                                           Margin="0,0,20,0"
+                                           HorizontalOptions="Center" 
+                                           VerticalOptions="Center" 
+                                           Source="{Binding status,Converter={StaticResource ImageConverter}}"/>
+
+
+                            <BoxView Grid.Row="1" Grid.ColumnSpan="8"
+                                     HeightRequest="1"
+                                     BackgroundColor="Black"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+                
+            </StackLayout>
+
+        </Frame>
+
+   
+
+</pages:PopupPage>

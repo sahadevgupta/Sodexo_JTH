@@ -1,0 +1,731 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Sodexo_JTH.Views.PatientSearchPage"
+             xmlns:local="clr-namespace:Sodexo_JTH.PopUpControl"
+             xmlns:converters="clr-namespace:Sodexo_JTH.Converters"
+             xmlns:effects="clr-namespace:Sodexo_JTH.Effects"
+             xmlns:translate="clr-namespace:Sodexo_JTH.Helpers"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:autosuggestion="clr-namespace:dotMorten.Xamarin.Forms;assembly=dotMorten.Xamarin.Forms.AutoSuggestBox"
+             BackgroundColor="White"
+             xmlns:resources="clr-namespace:Sodexo_JTH.Resources">
+
+    <NavigationPage.TitleView>
+
+        <Label Text="{x:Static resources:AppResources.searchPat}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" 
+             BackgroundColor="{StaticResource My_Header_Color}" 
+             FontSize="17"
+             FontFamily="{StaticResource SansationRegular}"
+             FontAttributes="Bold"
+             TextColor="White" HorizontalTextAlignment="Center" />
+
+    </NavigationPage.TitleView>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:AllergytextConverter x:Key="AllergytextConverter"/>
+            <converters:BoolToObjectConverter x:Key="BoolToObjectConverter"/>
+            <converters:ImageConverter x:Key="ImageConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <AbsoluteLayout  Padding="10" >
+        <StackLayout AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All" Opacity="1">
+
+            <StackLayout.Triggers>
+                <DataTrigger TargetType="StackLayout" Binding="{Binding IsPageEnabled}"
+                             Value="true">
+                    <Setter Property="Opacity" Value="0.5"/>
+                </DataTrigger>
+            </StackLayout.Triggers>
+            
+            <local:ConnectionView/>
+            <StackLayout Orientation="Horizontal">
+                <Image x:Name="sss" Source="{converters:PlatformImage SourceImage='logoinnertouch2order.png'}" HorizontalOptions="Start" HeightRequest="60" />
+                <Image  HorizontalOptions="EndAndExpand" Source="{converters:PlatformImage SourceImage='sodexologo.png'}" HeightRequest="60" />
+            </StackLayout>
+
+            <StackLayout  Orientation="Horizontal">
+                <Label x:Uid="txtDate" FontFamily="{StaticResource SansationRegular}"  TextColor="Black" FontSize="22" 
+                       Text="{x:Static resources:AppResources.txtDateText}" VerticalOptions="Center" HorizontalOptions="Start"   />
+
+                
+
+                <DatePicker Date="{Binding SelectedDate}"
+                        Format="dd-MMMM-yyyy"  
+                        BackgroundColor="White"  
+                        x:Name="orderdtpicker"  
+                        FontSize="17" 
+                            Visual="Default"
+                            FontFamily="{StaticResource SansationRegular}"
+                        MaximumDate="{Binding MaxDate}"
+                            MinimumDate="{Binding MinDate}"
+                        VerticalOptions="Center"   />
+
+            </StackLayout>
+
+
+            <StackLayout  Margin="0,10,0,0"  Orientation="Horizontal">
+                <StackLayout>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" CommandParameter="ByWard"
+                NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+
+                    <Label x:Name="sbyward" FontFamily="{StaticResource SansationRegular}" 
+                           Text="{x:Static resources:AppResources.sbwText}"/>
+                    <BoxView x:Name="sbywardboxview" IsVisible="False" HeightRequest="5" BackgroundColor="BlueViolet">
+                        <BoxView.Triggers>
+                            <DataTrigger TargetType="BoxView"
+                                         Binding="{Binding IsWardVisible}"
+                                         Value="true">
+                                <Setter Property="IsVisible" Value="True"/>
+                            </DataTrigger>
+                        </BoxView.Triggers>
+                    </BoxView>
+
+                </StackLayout>
+                
+                <StackLayout Margin="10,0,0,0">
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer  Tapped="TapGestureRecognizer_Tapped" CommandParameter="ByPatient"
+                NumberOfTapsRequired="1" />
+                    </StackLayout.GestureRecognizers>
+                    <Label FontFamily="{StaticResource SansationRegular}" x:Name="sbypatient" Text="{x:Static resources:AppResources.sbpText}" />
+                    <BoxView IsVisible="False" 
+                             x:Name="sbypatientboxview" HeightRequest="5" BackgroundColor="BlueViolet">
+                        <BoxView.Triggers>
+                            <DataTrigger Binding="{Binding IsWardVisible}"
+                                         TargetType="BoxView"
+                                         Value="false">
+                                <Setter Property="IsVisible" Value="True"/>
+                            </DataTrigger>
+                        </BoxView.Triggers>
+                    </BoxView>
+
+
+                </StackLayout>
+
+            </StackLayout>
+            <StackLayout Margin="0,10,0,0" Orientation="Horizontal" IsVisible="True" x:Name="WardStack">
+                <StackLayout.Triggers>
+                    <DataTrigger TargetType="StackLayout"
+                                 Binding="{Binding Source={x:Reference sbywardboxview},Path=IsVisible}"
+                                 Value="false">
+                        <Setter Property="IsVisible" Value="False"/>
+                    </DataTrigger>
+
+                </StackLayout.Triggers>
+                <Label  Text="{x:Static resources:AppResources.txtWardText}" VerticalOptions="Center" FontFamily="{StaticResource SansationRegular}"  
+                        FontSize="17"  />
+
+                <Picker ItemDisplayBinding="{Binding ward_name}"
+                        x:Name="cmbsearchbyward"
+                        FontFamily="{StaticResource SansationRegular}"
+                    HorizontalOptions="FillAndExpand"
+                        VerticalOptions="Center"
+                    ItemsSource="{Binding MstrWards}"
+                    SelectedItem="{Binding SelectedWard}"
+                        Title="Select Ward no."
+                        />
+
+                <Label  Text="{x:Static resources:AppResources.txtbedText}" VerticalOptions="Center" FontFamily="{StaticResource SansationRegular}" FontSize="17" />
+
+                <Picker ItemDisplayBinding="{Binding bed_no}"  
+                        x:Name="cmbsearchbypatient"
+                        FontFamily="{StaticResource SansationRegular}"
+                    HorizontalOptions="FillAndExpand"
+                         VerticalOptions="Center"
+                    SelectedItem="{Binding SelectedBed}"
+                    ItemsSource="{Binding BedDetails}"
+                         Title="Select Bed no."
+                        />
+                <Button  Text="{x:Static resources:AppResources.btnsearch1Content}" 
+                         FontFamily="{StaticResource SansationRegular}"
+                        HorizontalOptions="Center"
+                         VerticalOptions="End"
+                        HeightRequest="50"
+                       
+                         FontSize="Medium"
+                         Visual="Material"
+                        BackgroundColor="{StaticResource My_Button_Color}" CornerRadius="5" TextColor="{StaticResource My_Button_Foreground}"
+                    Command="{Binding SearchBtnCommand}"
+                        CommandParameter="WardNo"/>
+            </StackLayout>
+
+
+            <StackLayout IsVisible="False" x:Name="stcksearcbyname" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+
+                <StackLayout.Triggers>
+                    <DataTrigger TargetType="StackLayout"
+                                 Binding="{Binding Source={x:Reference WardStack},Path=IsVisible}"
+                                 Value="false">
+                        <Setter Property="IsVisible" Value="True"/>
+                    </DataTrigger>
+                </StackLayout.Triggers>
+
+                <autosuggestion:AutoSuggestBox PlaceholderText="{x:Static resources:AppResources.txtAutoSuggestBoxPlaceholderText}"
+                                                x:Name="autosuggestview"
+                                               Visual="Material"
+                                                HorizontalOptions="FillAndExpand"
+                                               ItemsSource="{Binding PatientDatas}"
+                                               TextChanged="AutoSuggestBox_TextChanged"/>
+
+                <!--<controls:AutoSuggestionBox ItemsSource="{Binding PatientDatas}"  
+                                            HorizontalOptions="FillAndExpand"
+                                            x:Name="autosuggestview"
+                                            TextChanged="AutoSuggestionBox_TextChanged"/>-->
+
+                <!--<autocomplete:SfAutoComplete  ValueChanged="SfAutoComplete_ValueChanged"
+                                              DataSource="{Binding PatientDatas}"
+                                              Watermark="Search" 
+                                              MaximumDropDownHeight="100"
+                                              SuggestionMode="Contains"
+                                              HorizontalOptions="FillAndExpand"
+                                              MaximumSuggestion="10"
+                                              
+                                              NoResultsFoundText="No Results Found"
+                                              LoadMoreText="LOAD MORE"/>-->
+                
+                
+                    <Button CornerRadius="5"
+                            FontFamily="{StaticResource SansationRegular}"
+                            x:Uid="btnsearch1" x:Name="btnsearch2" 
+                            BackgroundColor="{StaticResource My_Button_Color}" 
+                            TextColor="White" 
+                           HeightRequest="50"
+                           
+                         FontSize="Medium"
+                            Visual="Material"
+                            Command="{Binding SearchBtnCommand}" 
+                            CommandParameter="PatientName"
+                            Text="{x:Static resources:AppResources.btnsearch1Content}"  
+                            />
+               
+            </StackLayout>
+
+
+            <Grid BackgroundColor="#65676A" Margin="-10,0,-10,0" HeightRequest="60">
+               
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.5*"/>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="1.5*"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                        
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="30"/>
+
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="50"/>
+                  
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.Resources>
+                    <Style TargetType="Label">
+                        <Setter Property="TextColor" Value="{StaticResource My_Button_Foreground}"/>
+                        <Setter Property="FontFamily" Value="{StaticResource SansationRegular}"/>
+                        <Setter Property="VerticalOptions" Value="Center"/>
+                        <Setter Property="FontSize" Value="Small"/>
+                    </Style>
+                </Grid.Resources>
+
+                <Label  Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" Text="{x:Static resources:AppResources.txtCatText}" Margin="10,0"  />
+
+                <Label  Grid.Column="1" Grid.RowSpan="2" Grid.Row="0" Text="{x:Static resources:AppResources.txtWardbedText}"  />
+
+                <Label Grid.Column="2" Grid.RowSpan="2" Grid.Row="0"  Text="{x:Static resources:AppResources.pnameText}" />
+
+
+                <Label Grid.Row="0"  Grid.Column="3" HorizontalOptions="Center" Grid.RowSpan="2" Text="{x:Static resources:AppResources.allgeyText}"  />
+
+
+                <Label  Grid.Row="0" Grid.RowSpan="2" Grid.Column="4" Text="{x:Static resources:AppResources.txtdat}"  />
+               
+                <Label   Text="{x:Static resources:AppResources.cor2Text}" Grid.Row="0" Grid.ColumnSpan="3" Grid.Column="5"  HorizontalOptions="Center"/>
+
+                <Label HorizontalTextAlignment="Center" 
+                   Grid.Row="1" Grid.Column="5"
+                   
+                   BackgroundColor="#e23278" 
+                   VerticalOptions="Center" 
+                   Text="BF" 
+                   FontSize="13" />
+
+                <Label HorizontalTextAlignment="Center" 
+                   Grid.Row="1" Grid.Column="6"
+                   BackgroundColor="#c3ac13" 
+                   
+                   VerticalOptions="Center" 
+                   Text="LH" 
+                   FontSize="13" />
+
+                <Label VerticalOptions="Center" 
+                   Grid.Row="1" Grid.Column="7"
+                   
+                   BackgroundColor="Green"
+                   HorizontalTextAlignment="Center" 
+                   Text="DN" FontSize="13"/>
+
+                <Label Grid.Row="0" 
+                   Grid.RowSpan="2"  
+                       WidthRequest="100"
+                       Grid.Column="8"  
+                   HorizontalOptions="Center"
+                   Text="{x:Static resources:AppResources.tblklastmodifiedText}" 
+                      />
+                <Label  Grid.Row="0" Grid.Column="9" 
+                    Grid.RowSpan="2" 
+                        Margin="0,0,5,0"
+                    HorizontalOptions="Center"
+                    Text="{x:Static resources:AppResources.codText}" 
+                     />
+            </Grid>
+
+              <ListView HasUnevenRows="True" IsVisible="{OnPlatform UWP=true,Android=false,iOS=false}"
+                      SelectionMode="None"
+                      Footer=""
+                     
+                      CachingStrategy="RecycleElement"
+                      ItemTapped="ListView_ItemTapped"
+                      ItemsSource="{Binding Patients}">
+                <ListView.Effects >
+                    <effects:ItemholdingEffect ItemLongPressed="ItemholdingEffect_ItemLongPressed"/>
+                </ListView.Effects>
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+                            <Grid Padding="10">
+
+                               
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="1.5*"/>
+                                    <ColumnDefinition Width="1.5*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="2*"/>
+
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="30"/>
+
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="50"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="1"/>
+                                </Grid.RowDefinitions>
+
+                                <Label VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,0,0"  Text="{Binding category}" LineBreakMode="WordWrap" />
+
+                                <Label VerticalOptions="CenterAndExpand" HorizontalOptions="Start" Grid.Column="1" x:Name="tblid"
+                                       Text="{Binding ward_bed}"  LineBreakMode="CharacterWrap" />
+
+                                <Label VerticalOptions="Center"  HorizontalOptions="Start"  Grid.Column="2" x:Name="tblpid" Text="{Binding Patientname}"  LineBreakMode="WordWrap"  />
+
+                                <Label VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="3" x:Name="tblname" Text="{Binding Allergies,Converter={StaticResource AllergytextConverter}}" LineBreakMode="WordWrap"  />
+
+                                <Label VerticalOptions="Center" MaxLines="4"   Grid.Column="4"  Text="{Binding DietType}" LineBreakMode="WordWrap"  />
+
+
+                                <ImageButton BackgroundColor="Transparent" Source="{Binding BF,Converter={StaticResource ImageConverter}}"
+                                         Grid.Column="5" HeightRequest="20"  WidthRequest="20"
+                                             Clicked="ImageButton_Clicked"
+                                             CommandParameter="BF"
+                                             HorizontalOptions="Center"
+                                         VerticalOptions="Center"/>
+
+                                <ImageButton BackgroundColor="Transparent" Source="{Binding LH,Converter={StaticResource ImageConverter}}"
+                                         Grid.Column="6" HeightRequest="20"  WidthRequest="20"
+                                             Clicked="ImageButton_Clicked"
+                                             CommandParameter="LH"
+                                              HorizontalOptions="Center"
+                                         VerticalOptions="Center"/>
+
+                                <ImageButton BackgroundColor="Transparent" Source="{Binding DN,Converter={StaticResource ImageConverter}}"
+                                         Grid.Column="7"  HeightRequest="20"  WidthRequest="20"
+                                             Clicked="ImageButton_Clicked"
+                                             CommandParameter="DN"
+                                              HorizontalOptions="Center"
+                                         VerticalOptions="Center"/>
+
+                                <Label  HorizontalOptions="Center"  Grid.Column="8"  VerticalOptions="Center"  LineBreakMode="WordWrap" Text="{Binding Last_Order_by}"   />
+
+                                <ImageButton BackgroundColor="Transparent" Source="{converters:PlatformImage SourceImage='cancel.png'}"
+                                         Grid.Column="9" HeightRequest="30" WidthRequest="20"
+                                             x:Name="DeleteOrder"
+                                             Margin="0,0,5,0"
+                                             IsEnabled="True"
+                                             Clicked="DeleteOrder_Clicked"
+                                         VerticalOptions="Center"/>
+
+
+
+                                <BoxView VerticalOptions="End" Grid.ColumnSpan="10" Grid.Row="1" HeightRequest="1" BackgroundColor="Black"/>
+
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <ListView HasUnevenRows="True" IsVisible="{OnPlatform UWP=false,Android=false,iOS=true}"
+                      SelectionMode="None"
+                      Footer=""
+                     
+                      CachingStrategy="RecycleElement"
+                      ItemTapped="ListView_ItemTapped"
+                      ItemsSource="{Binding Patients}">
+               
+               
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                       <ViewCell>
+                            <Grid Padding="0,10" Margin="0,10">
+                                 <Grid.Effects >
+                                      <effects:ItemholdingEffect ItemLongPressed="ItemholdingEffect_ItemLongPressed"/>
+                                </Grid.Effects>
+                                                           
+
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="1.5*"/>
+                                    <ColumnDefinition Width="1.5*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="2*"/>
+
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="30"/>
+
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="50"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                   
+                                </Grid.RowDefinitions>
+
+                                <Grid.Resources>
+                                    <Style TargetType="Label">
+                                        <Setter Property="FontSize" Value="15"/>
+                                    </Style>
+                                </Grid.Resources>
+
+
+                                <Label  HorizontalOptions="Center"  Text="{Binding category}" LineBreakMode="WordWrap" />
+
+                                <Label Grid.Column="1" x:Name="tblid" 
+                                       Text="{Binding ward_bed}"  LineBreakMode="CharacterWrap" />
+
+                                <Label  HorizontalOptions="Start"  Grid.Column="2" x:Name="tblpid" Text="{Binding Patientname}"  LineBreakMode="WordWrap"  />
+
+                                <Label  HorizontalOptions="Center" Grid.Column="3" x:Name="tblname" Text="{Binding Allergies,Converter={StaticResource AllergytextConverter}}" LineBreakMode="WordWrap"  />
+
+                                <Label  MaxLines="4"   Grid.Column="4"  Text="{Binding DietType}" LineBreakMode="WordWrap"  />
+
+
+                                <ImageButton BackgroundColor="Transparent" Source="{Binding BF,Converter={StaticResource ImageConverter}}"
+                                         Grid.Column="5" HeightRequest="20"  WidthRequest="20"
+                                             Clicked="ImageButton_Clicked"
+                                             CommandParameter="BF"
+                                             HorizontalOptions="Center"
+                                         VerticalOptions="Center"/>
+
+                                <ImageButton BackgroundColor="Transparent" Source="{Binding LH,Converter={StaticResource ImageConverter}}"
+                                         Grid.Column="6" HeightRequest="20"  WidthRequest="20"
+                                             Clicked="ImageButton_Clicked"
+                                             CommandParameter="LH"
+                                              HorizontalOptions="Center"
+                                         VerticalOptions="Center"/>
+
+                                <ImageButton BackgroundColor="Transparent" Source="{Binding DN,Converter={StaticResource ImageConverter}}"
+                                         Grid.Column="7"  HeightRequest="20"  WidthRequest="20"
+                                             Clicked="ImageButton_Clicked"
+                                             CommandParameter="DN"
+                                              HorizontalOptions="Center"
+                                         VerticalOptions="Center"/>
+
+                                <Label  HorizontalOptions="Center"  Grid.Column="8"  VerticalOptions="Center"  LineBreakMode="WordWrap" Text="{Binding Last_Order_by}"   />
+
+                                <ImageButton BackgroundColor="Transparent" Source="{converters:PlatformImage SourceImage='cancel.png'}"
+                                         Grid.Column="9" HeightRequest="30" WidthRequest="20"
+                                             x:Name="DeleteOrder"
+                                             Margin="0,0,5,0"
+                                             IsEnabled="True"
+                                             Clicked="DeleteOrder_Clicked"
+                                         VerticalOptions="Center"/>
+
+
+                                  
+
+
+
+
+                            </Grid>
+                           </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+            <CollectionView ItemsSource="{Binding Patients}" android:ListView.IsFastScrollEnabled="True" IsVisible="{OnPlatform Android=true,Default=false}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate >
+                        <Grid>
+                            <Grid.Effects>
+                                <effects:ItemholdingEffect  ItemLongPressed="ItemholdingEffect_ItemLongPressed" ItemTapped="ItemholdingEffect_ItemTapped"/>
+                            </Grid.Effects>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.5*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="1.5*"/>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="2*"/>
+                               
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="30"/>
+
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="50"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="1"/>
+                            </Grid.RowDefinitions>
+
+                            <Label VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,0,0"  Text="{Binding category}" LineBreakMode="WordWrap" />
+
+                            <Label VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1" x:Name="tblid" Text="{Binding ward_bed}" LineBreakMode="WordWrap"  />
+
+                            <Label VerticalOptions="Center"  HorizontalOptions="Start"  Grid.Column="2" x:Name="tblpid" Text="{Binding Patientname}"  LineBreakMode="WordWrap"  />
+
+                            <Label VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="3" x:Name="tblname" Text="{Binding Allergies,Converter={StaticResource AllergytextConverter}}" LineBreakMode="WordWrap"  />
+
+                            <Label VerticalOptions="Center" MaxLines="4"   Grid.Column="4"  Text="{Binding DietType}" LineBreakMode="TailTruncation"  />
+
+                           
+                            <ImageButton BackgroundColor="Transparent" Source="{Binding BF,Converter={StaticResource ImageConverter}}"
+                                         Grid.Column="5" HeightRequest="{OnPlatform Android=20,iOS=30}"  
+                                             Clicked="ImageButton_Clicked"
+                                             CommandParameter="BF"
+                                             HorizontalOptions="Center"
+                                         VerticalOptions="Center"/>
+
+                            <ImageButton BackgroundColor="Transparent" Source="{Binding LH,Converter={StaticResource ImageConverter}}"
+                                         Grid.Column="6" HeightRequest="{OnPlatform Android=20,iOS=30}"
+                                             Clicked="ImageButton_Clicked"
+                                             CommandParameter="LH"
+                                              HorizontalOptions="Center"
+                                         VerticalOptions="Center"/>
+
+                            <ImageButton BackgroundColor="Transparent" Source="{Binding DN,Converter={StaticResource ImageConverter}}"
+                                         Grid.Column="7"  HeightRequest="{OnPlatform Android=20,iOS=30}"  
+                                             Clicked="ImageButton_Clicked"
+                                             CommandParameter="DN"
+                                              HorizontalOptions="Center"
+                                         VerticalOptions="Center"/>
+
+                            <Label  HorizontalOptions="Center"  Grid.Column="8"  VerticalOptions="Center"  LineBreakMode="WordWrap" Text="{Binding Last_Order_by}"   />
+
+                            <ImageButton BackgroundColor="Transparent" Source="{converters:PlatformImage SourceImage='cancel.png'}"
+                                         Grid.Column="9" HeightRequest="35" 
+                                             x:Name="DeleteOrder"
+                                             Margin="0,0,5,0"
+                                             IsEnabled="True"
+                                             Clicked="DeleteOrder_Clicked"
+                                         VerticalOptions="Center"/>
+
+
+                           
+
+
+                            <BoxView VerticalOptions="End" Grid.ColumnSpan="10" Grid.Row="1" HeightRequest="1" BackgroundColor="Black"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            
+            
+            <!--<ListView HasUnevenRows="True"
+                      x:Name="listview"
+                      CachingStrategy="RecycleElement"
+                      ItemTapped="ListView_ItemTapped"
+                      ItemSelected="Listview_ItemSelected"
+                      SelectionMode="None"
+                      ItemsSource="{Binding Patients}">
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+
+                                
+                                
+                                <Grid.Effects>
+                                    <effects:ItemholdingEffect  ItemLongPressed="ItemholdingEffect_ItemLongPressed"/>
+                                </Grid.Effects>
+                                
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1.5*"/>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="1.5*"/>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="0.5*"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="30"/>
+
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="50"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="1"/>
+                                </Grid.RowDefinitions>
+
+                                <Grid.Resources>
+                                    <Style TargetType="Label">
+                                        <Setter Property="FontFamily" Value="{StaticResource SansationRegular}"/>
+                                    </Style>
+                                </Grid.Resources>
+
+                                <Label VerticalOptions="Center" HorizontalOptions="Start" Margin="5,0,0,0"  Text="{Binding category}" LineBreakMode="WordWrap" />
+
+                                <Label VerticalOptions="Center" HorizontalOptions="Start" Grid.Column="1" x:Name="tblid" Text="{Binding ward_bed}" LineBreakMode="WordWrap"  />
+
+                                <Label VerticalOptions="Center"  HorizontalOptions="Start"  Grid.Column="2" x:Name="tblpid" Text="{Binding Patientname}"  LineBreakMode="WordWrap"  />
+
+                                <Label VerticalOptions="Center" HorizontalOptions="Center" Grid.Column="3" x:Name="tblname" Text="{Binding Allergies,Converter={StaticResource AllergytextConverter}}" LineBreakMode="WordWrap"  />
+
+                                <Label VerticalOptions="Center" MaxLines="4"   Grid.Column="4"  Text="{Binding patient_race}" LineBreakMode="TailTruncation"  />
+
+                                <Label VerticalOptions="Center" HorizontalOptions="Center"  Grid.Column="5" x:Name="tblage" Text="{Binding ishalal,Converter={StaticResource BoolToObjectConverter}}" LineBreakMode="WordWrap"  />
+
+                                <Label VerticalOptions="Center" HorizontalOptions="Center"   Grid.Column="6" x:Name="tblwardid" Text="{Binding gender}" LineBreakMode="WordWrap"  />
+
+                                <ImageButton BackgroundColor="Transparent" Source="{Binding BF,Converter={StaticResource ImageConverter}}"
+                                         Grid.Column="7" HeightRequest="20"  
+                                             Clicked="ImageButton_Clicked"
+                                             CommandParameter="BF"
+                                             HorizontalOptions="Center"
+                                         VerticalOptions="Center"/>
+
+                                <ImageButton BackgroundColor="Transparent" Source="{Binding LH,Converter={StaticResource ImageConverter}}"
+                                         Grid.Column="8" HeightRequest="20"  
+                                             Clicked="ImageButton_Clicked"
+                                             CommandParameter="LH"
+                                              HorizontalOptions="Center"
+                                         VerticalOptions="Center"/>
+
+                                <ImageButton BackgroundColor="Transparent" Source="{Binding DN,Converter={StaticResource ImageConverter}}"
+                                         Grid.Column="9"  HeightRequest="20"  
+                                             Clicked="ImageButton_Clicked"
+                                             CommandParameter="DN"
+                                              HorizontalOptions="Center"
+                                         VerticalOptions="Center"/>
+
+                                <Label  HorizontalOptions="Center"  Grid.Column="10"  VerticalOptions="Center"  LineBreakMode="WordWrap" Text="{Binding Last_Order_by}"   />
+
+                                <ImageButton BackgroundColor="Transparent" Source="{converters:PlatformImage SourceImage='cancel'}"
+                                         Grid.Column="11" HeightRequest="35" 
+                                             x:Name="DeleteOrder"
+                                             Margin="0,0,5,0"
+                                             IsEnabled="True"
+                                             Clicked="DeleteOrder_Clicked"
+                                         VerticalOptions="Center">
+                                    <ImageButton.Triggers>
+                                        <DataTrigger TargetType="ImageButton"
+                                                     Binding="{Binding is_care_giver}"
+                                                     Value="true">
+                                            <Setter Property="IsEnabled" Value="False"/>
+                                            <Setter Property="Opacity" Value="0.7" />
+                                        </DataTrigger>
+
+                                        <DataTrigger TargetType="ImageButton"
+                                                     Binding="{Binding Last_Order_by}"
+                                                     Value="">
+                                            <Setter Property="IsEnabled" Value="False"/>
+                                            <Setter Property="Opacity" Value="0.7" />
+                                        </DataTrigger>
+
+                                    </ImageButton.Triggers>
+                                </ImageButton>
+
+
+                                <BoxView VerticalOptions="End" Grid.ColumnSpan="12" Grid.Row="1" HeightRequest="1" BackgroundColor="Black"/>
+
+
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+            
+           
+
+           
+        </StackLayout>
+
+
+
+        <StackLayout x:Name="loadingStack" AbsoluteLayout.LayoutBounds="0.5,0.5,1,1"
+                     VerticalOptions="CenterAndExpand"
+                     HorizontalOptions="CenterAndExpand"
+            AbsoluteLayout.LayoutFlags="All" IsVisible="False">
+
+
+            <StackLayout.Triggers>
+                <DataTrigger TargetType="StackLayout"
+                             Binding="{Binding IsPageEnabled}"
+                             Value="true">
+                    <Setter Property="IsVisible" Value="True"/>
+                    <Setter Property="Opacity" Value="0.7"/>
+                </DataTrigger>
+            </StackLayout.Triggers>
+
+            <ActivityIndicator Color="IndianRed" x:Name="ProgressB"  IsRunning="False">
+                <ActivityIndicator.Triggers>
+                    <DataTrigger TargetType="ActivityIndicator"
+                                 Binding="{Binding Source={x:Reference loadingStack},Path=IsVisible}"
+                                 Value="true">
+                        <Setter Property="IsRunning" Value="True"/>
+                    </DataTrigger>
+                </ActivityIndicator.Triggers>
+            </ActivityIndicator>
+
+            <Label Text="{x:Static resources:AppResources.load}" FontSize="Subtitle"
+                   IsVisible="{Binding IsVisible,Source={x:Reference ProgressB}}" 
+                   TextColor="IndianRed" HorizontalOptions="CenterAndExpand" VerticalOptions="Center"/>
+        </StackLayout>
+
+       
+    </AbsoluteLayout>
+
+</ContentPage>

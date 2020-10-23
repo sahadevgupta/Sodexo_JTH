@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<popupPage:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                     xmlns:prism="http://prismlibrary.com"
+                     prism:DialogLayout.RelativeWidthRequest="{OnIdiom Default=0.75, Desktop=0.5}"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:popupPage="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                     xmlns:behaviors="clr-namespace:Sodexo_JTH.Behaviors"
+                     xmlns:UiTemplates="clr-namespace:Sodexo_JTH.PopUpControl"
+                     x:Class="Sodexo_JTH.Controls.CaregiverODPopup">
+    <popupPage:PopupPage.Resources>
+        <Style TargetType="ScrollView">
+            <Setter Property="BackgroundColor" Value="Transparent" />
+            <Setter Property="VerticalOptions" Value="Center" />
+
+            <Setter Property="HorizontalOptions">
+                <Setter.Value>
+                    <OnIdiom
+                            x:TypeArguments="LayoutOptions"
+                            Desktop="Center"
+                            Phone="FillAndExpand"
+                            TV="Center"
+                            Tablet="CenterAndExpand"
+                            Watch="FillAndExpand" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Orientation">
+                <Setter.Value>
+                    <OnIdiom
+                            x:TypeArguments="ScrollOrientation"
+                            Desktop="Vertical"
+                            Phone="Vertical"
+                            TV="Both"
+                            Tablet="Vertical"
+                            Watch="Vertical" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </popupPage:PopupPage.Resources>
+    <ScrollView>
+        <ScrollView.Resources>
+            <Style x:Key="PopupView" TargetType="View">
+
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="VerticalOptions" Value="Center" />
+
+
+                <Setter Property="HorizontalOptions">
+                    <Setter.Value>
+                        <OnIdiom
+                            x:TypeArguments="LayoutOptions"
+                            Desktop="Center"
+                            Phone="FillAndExpand"
+                            TV="Center"
+                            Tablet="CenterAndExpand"
+                            Watch="FillAndExpand" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ScrollView.Resources>
+        <Frame Padding="15" BackgroundColor="WhiteSmoke"
+               HasShadow="False"
+               OutlineColor="Black" >
+            <StackLayout Style="{StaticResource PopupView}">
+
+                <UiTemplates:PopupTitleView Text="{Binding MealTime}"  Close="PopupTitleView_Close" />
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <Label Margin="2" Text="Order Id:" FontAttributes="Bold" Grid.Row="0" Grid.Column="0"/>
+                    <Label Margin="2" Text="Date" FontAttributes="Bold" Grid.Row="1" Grid.Column="0"/>
+                    <Label Margin="2" Text="Patient Name:"  FontAttributes="Bold" Grid.Row="2" Grid.Column="0"/>
+                    <Label Margin="2" Text="Ward-Bed:" FontAttributes="Bold" Grid.Row="3" Grid.Column="0"/>
+                    <Label Margin="2" Text="{Binding OrderedID}"  Grid.Row="0" Grid.Column="1"/>
+                    <Label Margin="2" Text="{Binding date}"  Grid.Row="1" Grid.Column="1"/>
+                    <Label Margin="2" Text="{Binding Name}"  Grid.Row="2" Grid.Column="1"/>
+                    <Label Margin="2" Text="{Binding ward_bed}" Grid.Row="3" Grid.Column="1"/>
+
+                </Grid>
+                <StackLayout BackgroundColor="{StaticResource My_Header_Color}" Orientation="Horizontal">
+                    <Label Text="Menu Item" FontSize="Medium" HorizontalOptions="CenterAndExpand" 
+                           FontAttributes="Bold" TextColor="White"
+                           FontFamily="{StaticResource SansationRegular}"/>
+                    <Label Text="Amount" FontSize="Medium" HorizontalOptions="EndAndExpand" 
+                           FontAttributes="Bold" TextColor="White" Margin="0,0,5,0"
+                           FontFamily="{StaticResource SansationRegular}"/>
+                </StackLayout>
+                
+                    <StackLayout Orientation="Horizontal" Margin="20">
+                        <Label VerticalOptions="Center" x:Name="menuItemNameLabel" HorizontalOptions="CenterAndExpand"/>
+                    <Label VerticalOptions="Center" x:Name="AmountLabel"  HorizontalOptions="EndAndExpand"/>
+                    </StackLayout>
+                <BoxView HeightRequest="1" HorizontalOptions="FillAndExpand"  BackgroundColor="DarkGray"/>
+                <StackLayout Orientation="Horizontal" Margin="20">
+                    <Label Text="Amount" FontAttributes="Bold" HorizontalOptions="StartAndExpand" FontFamily="{StaticResource SansationRegular}"/>
+                    <Label FontFamily="{StaticResource SansationRegular}" x:Name="TotalAmountLabel" HorizontalOptions="End" FontAttributes="Bold"/>
+                    </StackLayout>
+                
+                <StackLayout Orientation="Horizontal" Margin="10">
+                    <Label FontFamily="{StaticResource SansationRegular}" Text="Mode of transaction:" FontAttributes="Bold" />
+                    <Label FontFamily="{StaticResource SansationRegular}" x:Name="PaymentModeLabel" HorizontalOptions="EndAndExpand"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" Margin="10">
+                    <Label FontFamily="{StaticResource SansationRegular}" Text="Remarks:" VerticalTextAlignment="Center" FontAttributes="Bold"
+                           HorizontalOptions="Start" />
+                    <Entry x:Name="remarksEntry" Placeholder="Enter remarks here" FontFamily="{StaticResource SansationRegular}"
+                           HorizontalOptions="FillAndExpand">
+                        <Entry.Behaviors>
+                            <behaviors:SpecialCharValidationBehavior/>
+                        </Entry.Behaviors>
+                    </Entry>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Button Text="Update" x:Name="DeliverButton" Clicked="DeliverButton_Clicked" 
+                            HeightRequest="60" HorizontalOptions="FillAndExpand" 
+                            FontAttributes="Bold" TextColor="White"
+                            FontFamily="{StaticResource SansationRegular}"
+                            BackgroundColor="{StaticResource My_Header_Color}"/>
+                    <Button Text="Cancel" x:Name="CancelButton" Clicked="CancelButton_Clicked"
+                            HeightRequest="60" HorizontalOptions="FillAndExpand" 
+                            FontFamily="{StaticResource SansationRegular}"
+                            FontAttributes="Bold" TextColor="White" BackgroundColor="IndianRed"/>
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+    </ScrollView>
+</popupPage:PopupPage>

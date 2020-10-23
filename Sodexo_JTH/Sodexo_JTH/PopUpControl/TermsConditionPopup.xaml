@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup" xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="Sodexo_JTH.PopUpControl.TermsConditionPopup">
+
+    <pages:PopupPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="ScrollView">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="VerticalOptions" Value="Center" />
+
+                <Setter Property="HorizontalOptions">
+                    <Setter.Value>
+                        <OnIdiom
+                            x:TypeArguments="LayoutOptions"
+                            Desktop="Center"
+                            Phone="FillAndExpand"
+                            TV="Center"
+                            Tablet="CenterAndExpand"
+                            Watch="FillAndExpand" />
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Orientation">
+                    <Setter.Value>
+                        <OnIdiom
+                            x:TypeArguments="ScrollOrientation"
+                            Desktop="Vertical"
+                            Phone="Vertical"
+                            TV="Both"
+                            Tablet="Vertical"
+                            Watch="Vertical" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </pages:PopupPage.Resources>
+    
+    <ScrollView>
+
+        <ScrollView.Resources>
+            <Style x:Key="PopupView" TargetType="View">
+
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="VerticalOptions" Value="Center" />
+
+
+                <Setter Property="HorizontalOptions">
+                    <Setter.Value>
+                        <OnIdiom
+                            x:TypeArguments="LayoutOptions"
+                            Desktop="Center"
+                            Phone="FillAndExpand"
+                            TV="Center"
+                            Tablet="CenterAndExpand"
+                            Watch="FillAndExpand" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ScrollView.Resources>
+
+        <Frame Margin="10" CornerRadius="5" BackgroundColor="White" Padding="3" HorizontalOptions="Center"
+           WidthRequest="400"
+           BorderColor="Transparent">
+            <StackLayout Margin="10"
+              BackgroundColor="Transparent"
+                         Style="{StaticResource PopupView}"
+              >
+
+                <Label FontFamily="{StaticResource SansationRegular}" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Text="Terms &amp; Conditions" FontSize="Title" FontAttributes="Bold"/>
+                <Editor FontFamily="{StaticResource SansationRegular}" Text="Term and condition of services....." 
+                    IsReadOnly="True"
+                    HeightRequest="300"
+                    Grid.Row="1"/>
+                <StackLayout Grid.Row="2" Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+                    <CheckBox x:Name="checked" VerticalOptions="Center" 
+                              Color="HotPink"
+                              HorizontalOptions="Start" WidthRequest="30"/>
+                    <Label FontFamily="{StaticResource SansationRegular}" Margin="-10,0,0,0" VerticalOptions="Center" Text="I Accept above Terms and conditions"/>
+                </StackLayout>
+
+                <Button Margin="0,10,0,0" WidthRequest="60"
+                    BackgroundColor="IndianRed"
+                        FontFamily="{StaticResource SansationRegular}"
+                    FontSize="Body"
+                    IsEnabled="False"
+                    Clicked="Button_Clicked"
+                    HeightRequest="40"
+                    CornerRadius="5"
+                    TextColor="White"
+                    Text="I Accept">
+                    <Button.Triggers>
+                        <DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference checked},Path=IsChecked}"
+                                 Value="true">
+                            <Setter Property="IsEnabled" Value="True"/>
+                        </DataTrigger>
+                    </Button.Triggers>
+                </Button>
+            </StackLayout>
+        </Frame>
+    </ScrollView>
+    
+   
+    
+    
+
+</pages:PopupPage>

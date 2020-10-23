@@ -1,0 +1,1020 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="adateText" xml:space="preserve">
+    <value>Admission Date:</value>
+    <comment>Admission Date:</comment>
+  </data>
+  <data name="adchText" xml:space="preserve">
+    <value>Adult/Child:</value>
+    <comment>Adult/Child:</comment>
+  </data>
+  <data name="aeText" xml:space="preserve">
+    <value>Age:</value>
+    <comment>Age:</comment>
+  </data>
+  <data name="alert" xml:space="preserve">
+    <value>Alert</value>
+    <comment>Alert</comment>
+  </data>
+  <data name="algeText" xml:space="preserve">
+    <value>Allergies:</value>
+    <comment>Allergies:</comment>
+  </data>
+  <data name="allgeyText" xml:space="preserve">
+    <value>Allergy</value>
+    <comment>Allergy</comment>
+  </data>
+  <data name="am" xml:space="preserve">
+    <value>Add to menu</value>
+    <comment>Add to menu</comment>
+  </data>
+  <data name="ameContent" xml:space="preserve">
+    <value>Add to menu</value>
+    <comment>Add to menu</comment>
+  </data>
+  <data name="anmText" xml:space="preserve">
+    <value>Adult/Child:</value>
+    <comment>Age Name:</comment>
+  </data>
+  <data name="bclassText" xml:space="preserve">
+    <value>Bed Class:</value>
+    <comment>Bed Class:</comment>
+  </data>
+  <data name="bclsText" xml:space="preserve">
+    <value>Bed Class:</value>
+    <comment>Bed Class:</comment>
+  </data>
+  <data name="bdText" xml:space="preserve">
+    <value>Bed</value>
+    <comment>Bed</comment>
+  </data>
+  <data name="bevText" xml:space="preserve">
+    <value>Beverages</value>
+    <comment>Beverages</comment>
+  </data>
+  <data name="bf" xml:space="preserve">
+    <value>Breakfast Late Cut off time exceeds</value>
+    <comment>Breakfast Late Cut off time exceeds</comment>
+  </data>
+  <data name="bfc" xml:space="preserve">
+    <value>Breakfast Cut off time exceeds</value>
+    <comment>Breakfast Cut off time exceeds</comment>
+  </data>
+  <data name="bfco" xml:space="preserve">
+    <value>Breakfast Cut off time: </value>
+    <comment>Breakfast Cut off time:</comment>
+  </data>
+  <data name="bfeText" xml:space="preserve">
+    <value>Breakfast</value>
+    <comment>Breakfast</comment>
+  </data>
+  <data name="bfpl" xml:space="preserve">
+    <value>Breakfast meal Order is already placed.</value>
+    <comment>Breakfast meal Order is already placed.</comment>
+  </data>
+  <data name="btnloginContent" xml:space="preserve">
+    <value>SUBMIT</value>
+    <comment>SUBMIT</comment>
+  </data>
+  <data name="btnsearch1Content" xml:space="preserve">
+    <value>Search</value>
+    <comment>Search</comment>
+  </data>
+  <data name="btnupdateContent" xml:space="preserve">
+    <value>Update</value>
+    <comment>Update</comment>
+  </data>
+  <data name="can" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="canc" xml:space="preserve">
+    <value>Do you want to cancel this order?</value>
+    <comment>Do you want to cancel this order?</comment>
+  </data>
+  <data name="caseText" xml:space="preserve">
+    <value>Case Id:</value>
+    <comment>Case Id:</comment>
+  </data>
+  <data name="cex" xml:space="preserve">
+    <value> Cut off time exceeds</value>
+    <comment>Cut off time exceeds</comment>
+  </data>
+  <data name="cgContent" xml:space="preserve">
+    <value>Care Giver</value>
+    <comment>Care Giver</comment>
+  </data>
+  <data name="chckuser" xml:space="preserve">
+    <value>Please check username you have entered</value>
+    <comment>Please check username you have entered</comment>
+  </data>
+  <data name="clearfeedmsg" xml:space="preserve">
+    <value>Please select any items from Soup,Beverages,Fruit menu and select Meal Option.</value>
+    <comment>Please select any items from Soup,Beverages,Fruit menu and select Meal Option.</comment>
+  </data>
+  <data name="closeContent" xml:space="preserve">
+    <value>Close</value>
+    <comment>Close</comment>
+  </data>
+  <data name="cmbsearchbypatientPlaceholderText" xml:space="preserve">
+    <value>Select bed no.</value>
+    <comment>Select bed no.</comment>
+  </data>
+  <data name="cmbsearchbywardPlaceholderText" xml:space="preserve">
+    <value>Select ward  no.</value>
+    <comment>Select ward  no.</comment>
+  </data>
+  <data name="cnContent" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="cnfContent" xml:space="preserve">
+    <value>Confinement</value>
+    <comment>Confinement</comment>
+  </data>
+  <data name="cnfeContent" xml:space="preserve">
+    <value>Confirm</value>
+    <comment>Confirm</comment>
+  </data>
+  <data name="codText" xml:space="preserve">
+    <value>Cancel Order</value>
+    <comment>Cancel Order</comment>
+  </data>
+  <data name="contentdesc" xml:space="preserve">
+    <value>Do you want to proceed to sync?</value>
+    <comment>Do you want to proceed to sync?</comment>
+  </data>
+  <data name="contentno" xml:space="preserve">
+    <value>No</value>
+    <comment>No</comment>
+  </data>
+  <data name="contenttit" xml:space="preserve">
+    <value>There are  </value>
+    <comment>There are</comment>
+  </data>
+  <data name="contenttit2" xml:space="preserve">
+    <value> Meal Orders available for sync</value>
+    <comment>Meal Orders available for sync</comment>
+  </data>
+  <data name="contentyes" xml:space="preserve">
+    <value>Yes</value>
+    <comment>Yes</comment>
+  </data>
+  <data name="cor1Text" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="cor2Text" xml:space="preserve">
+    <value>Order</value>
+    <comment>Order</comment>
+  </data>
+  <data name="cot" xml:space="preserve">
+    <value> Cut off time: </value>
+    <comment>Cut off time:</comment>
+  </data>
+  <data name="cservText" xml:space="preserve">
+    <value>Change Server</value>
+    <comment>Change Server</comment>
+  </data>
+  <data name="ctText" xml:space="preserve">
+    <value>CUISINE TYPE</value>
+    <comment>CUISINE TYPE</comment>
+  </data>
+  <data name="datText" xml:space="preserve">
+    <value>Portion Size:</value>
+    <comment>Diet Type:</comment>
+  </data>
+  <data name="ddateText" xml:space="preserve">
+    <value>Discharge Date:</value>
+    <comment>Discharge Date:</comment>
+  </data>
+  <data name="delivered_message" xml:space="preserve">
+    <value>Selected Meal order status changed as delivered</value>
+    <comment>Selected Meal order status changed as delivered</comment>
+  </data>
+  <data name="dessText" xml:space="preserve">
+    <value>Dessert</value>
+    <comment>Dessert</comment>
+  </data>
+  <data name="dietText" xml:space="preserve">
+    <value>DIET TEXTURE</value>
+    <comment>DIET TEXTURE</comment>
+  </data>
+  <data name="dn" xml:space="preserve">
+    <value>Dinner Late Cut off time exceeds</value>
+    <comment>Dinner Late Cut off time exceeds</comment>
+  </data>
+  <data name="dnc" xml:space="preserve">
+    <value>Dinner Cut off time exceeds</value>
+    <comment>Dinner Cut off time exceeds</comment>
+  </data>
+  <data name="dnco" xml:space="preserve">
+    <value>Dinner Cut off time: </value>
+    <comment>Dinner Cut off time:</comment>
+  </data>
+  <data name="dneText" xml:space="preserve">
+    <value>Dinner</value>
+    <comment>Dinner</comment>
+  </data>
+  <data name="dnpl" xml:space="preserve">
+    <value>Dinner meal Order is already placed.</value>
+    <comment>Dinner meal Order is already placed.</comment>
+  </data>
+  <data name="dobtxtText" xml:space="preserve">
+    <value>DOB:</value>
+    <comment>DOB:</comment>
+  </data>
+  <data name="doccmnText" xml:space="preserve">
+    <value>Doc Comments:</value>
+    <comment>Doc Comments:</comment>
+  </data>
+  <data name="dodText" xml:space="preserve">
+    <value>Daily Order Detail</value>
+    <comment>Daily Order Detail</comment>
+  </data>
+  <data name="dosText" xml:space="preserve">
+    <value>Date Of Service:</value>
+    <comment>Date Of Service:</comment>
+  </data>
+  <data name="dteText" xml:space="preserve">
+    <value>Date</value>
+    <comment>Date</comment>
+  </data>
+  <data name="DTText" xml:space="preserve">
+    <value>Disposable Tray:</value>
+    <comment>Disposable Tray:</comment>
+  </data>
+  <data name="ent" xml:space="preserve">
+    <value>Enter server ip address</value>
+    <comment>Enter server ip address</comment>
+  </data>
+  <data name="ent2" xml:space="preserve">
+    <value>Please save server ip address/name.</value>
+    <comment>Please save server ip address/name.</comment>
+  </data>
+  <data name="entreeText" xml:space="preserve">
+    <value>Entrée</value>
+    <comment>Entree</comment>
+  </data>
+  <data name="faText" xml:space="preserve">
+    <value>FOOD ALLERGIES</value>
+    <comment>FOOD ALLERGIES</comment>
+  </data>
+  <data name="feedText" xml:space="preserve">
+    <value>Feedback</value>
+    <comment>Feedback</comment>
+  </data>
+  <data name="flna" xml:space="preserve">
+    <value>Feedback link not available</value>
+    <comment>Feedback link not available</comment>
+  </data>
+  <data name="fluidText" xml:space="preserve">
+    <value>Fluid Consistency:</value>
+    <comment>Fluid Consistency:</comment>
+  </data>
+  <data name="fomsg" xml:space="preserve">
+    <value>You changed the patient's settings. Do you want to delete the future orders of this patient?</value>
+    <comment>You changed the patient's settings. Do you want to delete the future orders of this patient?</comment>
+  </data>
+  <data name="FrageNr" xml:space="preserve">
+    <value>{0}</value>
+  </data>
+  <data name="gcmnText" xml:space="preserve">
+    <value>Gen Comment:</value>
+    <comment>Gen Comment:</comment>
+  </data>
+  <data name="genderText" xml:space="preserve">
+    <value>Gender:</value>
+    <comment>Gender:</comment>
+  </data>
+  <data name="hlnlText" xml:space="preserve">
+    <value>Halal/Non-Halal:</value>
+    <comment>Halal/Non-Halal:</comment>
+  </data>
+  <data name="hlText" xml:space="preserve">
+    <value>Halal:</value>
+    <comment>Halal:</comment>
+  </data>
+  <data name="ieText" xml:space="preserve">
+    <value>INGREDIENTS (Excludes)</value>
+    <comment>INGREDIENTS (Excludes)</comment>
+  </data>
+  <data name="ifu" xml:space="preserve">
+    <value> If you change your meal time, all selected menu items will be deleted. Do you want to change meal time?</value>
+    <comment>If you change your meal time, all selected menu items will be deleted. Do you want to change meal time?</comment>
+  </data>
+  <data name="juiceText" xml:space="preserve">
+    <value>Juice</value>
+    <comment>Juice</comment>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="lateorder" xml:space="preserve">
+    <value>Late Order is Placed Successfully , Kindly contact controller to Approve/Reject the order. \nDo you want to place another order for same patient?</value>
+    <comment>Late Order is Placed Successfully , Kindly contact controller to Approve/Reject the order. \nDo you want to place another order for same patient?</comment>
+  </data>
+  <data name="le" xml:space="preserve">
+    <value> Late Cut off time exceeds</value>
+    <comment>Late Cut off time exceeds</comment>
+  </data>
+  <data name="lh" xml:space="preserve">
+    <value>Lunch Late Cut off time exceeds</value>
+    <comment>Lunch Late Cut off time exceeds</comment>
+  </data>
+  <data name="lhc" xml:space="preserve">
+    <value>Lunch Cut off time exceeds</value>
+    <comment>Lunch Cut off time exceeds</comment>
+  </data>
+  <data name="lhco" xml:space="preserve">
+    <value>Lunch Cut off time: </value>
+    <comment>Lunch Cut off time:</comment>
+  </data>
+  <data name="lheText" xml:space="preserve">
+    <value>Lunch</value>
+    <comment>Lunch</comment>
+  </data>
+  <data name="lhpl" xml:space="preserve">
+    <value>Lunch meal Order is already placed.</value>
+    <comment>Lunch meal Order is already placed.</comment>
+  </data>
+  <data name="load" xml:space="preserve">
+    <value>Loading...</value>
+  </data>
+  <data name="logsure" xml:space="preserve">
+    <value>Are you sure you want to logout?</value>
+    <comment>Are you sure you want to logout?</comment>
+  </data>
+  <data name="mc22" xml:space="preserve">
+    <value>You can not place meal order as meal class name is not active.</value>
+    <comment>You can not place meal order as meal class name is not active.</comment>
+  </data>
+  <data name="mcText" xml:space="preserve">
+    <value>Meal Class:</value>
+    <comment>Meal Class:</comment>
+  </data>
+  <data name="ml" xml:space="preserve">
+    <value>Meal Prefrence Changed!</value>
+    <comment>Meal Prefrence Changed!</comment>
+  </data>
+  <data name="ml1" xml:space="preserve">
+    <value>Meal Order Successfully Cancelled</value>
+    <comment>Meal Order Successfully Cancelled</comment>
+  </data>
+  <data name="ml12" xml:space="preserve">
+    <value>Meal Order cancellation failed</value>
+    <comment>Meal Order cancellation failed</comment>
+  </data>
+  <data name="ml2" xml:space="preserve">
+    <value>Do you want to Change the (Veg/Nonveg)/(Halal/Non-Halal)/(Allergy) Status.</value>
+    <comment>Do you want to Change the (Veg/Nonveg)/(Halal/Non-Halal)/(Allergy) Status.</comment>
+  </data>
+  <data name="mlc" xml:space="preserve">
+    <value>Meal confirmation!</value>
+    <comment>Meal confirmation</comment>
+  </data>
+  <data name="mlc2" xml:space="preserve">
+    <value>Do you want to confirm order?</value>
+    <comment>Do you want to confirm order?</comment>
+  </data>
+  <data name="mo" xml:space="preserve">
+    <value>Meal order cancellation!</value>
+    <comment>Meal order cancellation!</comment>
+  </data>
+  <data name="mosText" xml:space="preserve">
+    <value>Meal Option:</value>
+    <comment>Meal Option:</comment>
+  </data>
+  <data name="motText" xml:space="preserve">
+    <value>Mode of transaction:</value>
+    <comment>Mode of transaction</comment>
+  </data>
+  <data name="mp" xml:space="preserve">
+    <value>Meal order is already placed.</value>
+    <comment>Meal order is already placed.</comment>
+  </data>
+  <data name="msg0" xml:space="preserve">
+    <value>Master data synced successfully.</value>
+    <comment>Master data synced successfully.</comment>
+  </data>
+  <data name="msg1" xml:space="preserve">
+    <value>Meal Orders Have been synced successfully</value>
+    <comment>Meal Orders Have been synced successfully</comment>
+  </data>
+  <data name="msg10" xml:space="preserve">
+    <value>Server is not accessible, please check internet connection.</value>
+    <comment>Server is not accessible, please check internet connection.</comment>
+  </data>
+  <data name="msg11" xml:space="preserve">
+    <value>No data available for sync</value>
+    <comment>No data available for sync</comment>
+  </data>
+  <data name="msg12" xml:space="preserve">
+    <value>History cannot be shown in offline mode.</value>
+    <comment>History cannot be shown in offline mode.</comment>
+  </data>
+  <data name="msg13" xml:space="preserve">
+    <value> Meal order status updated</value>
+    <comment>Meal order status updated</comment>
+  </data>
+  <data name="msg2" xml:space="preserve">
+    <value>Do you want to log-out from the application?</value>
+    <comment>"Do you want to log-out from the application?"</comment>
+  </data>
+  <data name="msg22" xml:space="preserve">
+    <value>Only FSA and Nurse can login in tablet.</value>
+    <comment>Only FSA and Nurse can login in tablet.</comment>
+  </data>
+  <data name="msg2w" xml:space="preserve">
+    <value>Invalid user name or password.</value>
+    <comment>Invalid user name or password.</comment>
+  </data>
+  <data name="msg3" xml:space="preserve">
+    <value>Enter server ip address</value>
+    <comment>Enter server ip address</comment>
+  </data>
+  <data name="msg4" xml:space="preserve">
+    <value>Please sync 'Sync Masters' and 'Sync Menu Items' from drawer menu to proceed further.</value>
+    <comment>Please sync 'Patient Data' and 'Menu Items' from drawer menu to proceed further.</comment>
+  </data>
+  <data name="msg5" xml:space="preserve">
+    <value>You can order meal for two days only.</value>
+    <comment>You can order meal for two days only.</comment>
+  </data>
+  <data name="msg6" xml:space="preserve">
+    <value>SORRY, You Are Not Authorised To Take First Order Of Patient</value>
+    <comment>SORRY, You Are Not Authorised To Take First Order Of Patient</comment>
+  </data>
+  <data name="msg7" xml:space="preserve">
+    <value>Patient data synced successfully.</value>
+    <comment>Patient data synced successfully.</comment>
+  </data>
+  <data name="msg8" xml:space="preserve">
+    <value>Menu Items synced succeesfully.</value>
+    <comment>Menu Items synced succeesfully.</comment>
+  </data>
+  <data name="msg9" xml:space="preserve">
+    <value>Unable to change patient settings during offline mode. Please undo the changes and try again</value>
+    <comment>Unable to change patient settings during offline mode. Please undo the changes and try again</comment>
+  </data>
+  <data name="mss1" xml:space="preserve">
+    <value>Please select patient name from suggestions first</value>
+    <comment>Please select patient name from suggestions first</comment>
+  </data>
+  <data name="msText" xml:space="preserve">
+    <value>Meal Summary</value>
+    <comment>Meal Summary</comment>
+  </data>
+  <data name="mteText" xml:space="preserve">
+    <value>Meal Time</value>
+    <comment>Meal Time</comment>
+  </data>
+  <data name="mtText" xml:space="preserve">
+    <value>Meal Type:</value>
+    <comment>Meal Type:</comment>
+  </data>
+  <data name="nit2" xml:space="preserve">
+    <value>No Item Available </value>
+    <comment>No Item Available</comment>
+  </data>
+  <data name="nitText" xml:space="preserve">
+    <value>No Item Available </value>
+    <comment>No Item Available</comment>
+  </data>
+  <data name="nmText" xml:space="preserve">
+    <value>Name:</value>
+    <comment>Name:</comment>
+  </data>
+  <data name="nomealhistrory" xml:space="preserve">
+    <value>There is no meal history for this patient.</value>
+    <comment>There is no meal history for this patient.</comment>
+  </data>
+  <data name="nricText" xml:space="preserve">
+    <value>NRIC/ID:</value>
+    <comment>NRIC/ID:</comment>
+  </data>
+  <data name="nxContent" xml:space="preserve">
+    <value>Next</value>
+    <comment>Next</comment>
+  </data>
+  <data name="obyText" xml:space="preserve">
+    <value>Order by</value>
+    <comment>Order by</comment>
+  </data>
+  <data name="odateText" xml:space="preserve">
+    <value>Order Date</value>
+    <comment>Order Date</comment>
+  </data>
+  <data name="odtText" xml:space="preserve">
+    <value>Order Date:</value>
+    <comment>Order Date:</comment>
+  </data>
+  <data name="offl" xml:space="preserve">
+    <value>Order is already Placed in offline mode for this Patient</value>
+    <comment>Order is already Placed in offline mode for this Patient</comment>
+  </data>
+  <data name="offl2" xml:space="preserve">
+    <value>Please Sync it from patient details screen.</value>
+    <comment>Please Sync it from patient details screen.</comment>
+  </data>
+  <data name="orderstatusText" xml:space="preserve">
+    <value>Meal Order Status</value>
+    <comment>Meal Order Status</comment>
+  </data>
+  <data name="order_placed" xml:space="preserve">
+    <value>{0} Meal order is already placed.</value>
+  </data>
+  <data name="oteText" xml:space="preserve">
+    <value>OTHERS</value>
+    <comment>OTHERS</comment>
+  </data>
+  <data name="otText" xml:space="preserve">
+    <value>Others </value>
+    <comment>Others</comment>
+  </data>
+  <data name="pageText" xml:space="preserve">
+    <value>Patient Age:</value>
+    <comment>Patient Age:</comment>
+  </data>
+  <data name="paraceText" xml:space="preserve">
+    <value>Patient Race:</value>
+    <comment>Patient Race:</comment>
+  </data>
+  <data name="patient" xml:space="preserve">
+    <value>Patient</value>
+    <comment>patient</comment>
+  </data>
+  <data name="pdataText" xml:space="preserve">
+    <value>Sync Masters</value>
+    <comment>Sync Patient Data</comment>
+  </data>
+  <data name="pdText" xml:space="preserve">
+    <value>Patient Details</value>
+    <comment>Patient Details</comment>
+  </data>
+  <data name="pinameText" xml:space="preserve">
+    <value>Patient Information</value>
+    <comment>Patient Information</comment>
+  </data>
+  <data name="pio" xml:space="preserve">
+    <value>Updated Patient Information</value>
+    <comment>Updated Patient Information</comment>
+  </data>
+  <data name="pls" xml:space="preserve">
+    <value>Please select any items from Entree menu Or select meal option.</value>
+    <comment>Please select any items from Entree menu Or select meal option.</comment>
+  </data>
+  <data name="pls11" xml:space="preserve">
+    <value>Please select ward number first.</value>
+    <comment>Please select ward number first.</comment>
+  </data>
+  <data name="plss" xml:space="preserve">
+    <value>Please enter user name and password.</value>
+    <comment>Please enter user name and password.</comment>
+  </data>
+  <data name="pmenuText" xml:space="preserve">
+    <value>Sync Menu Items</value>
+    <comment>Sync Menu Items</comment>
+  </data>
+  <data name="pmname1" xml:space="preserve">
+    <value>Patient Meal Information</value>
+    <comment>Patient Meal Information</comment>
+  </data>
+  <data name="pmnameText" xml:space="preserve">
+    <value>Patient Meal Information</value>
+    <comment>Patient Meal Information</comment>
+  </data>
+  <data name="pnameText" xml:space="preserve">
+    <value>Patient Name</value>
+    <comment>Patient Name</comment>
+  </data>
+  <data name="pneText" xml:space="preserve">
+    <value>Patient/NRIC</value>
+    <comment>Patient/NRIC</comment>
+  </data>
+  <data name="pnText" xml:space="preserve">
+    <value>Patient Name:</value>
+    <comment>Patient Name:</comment>
+  </data>
+  <data name="poContent" xml:space="preserve">
+    <value>Place Order</value>
+    <comment>Place Order</comment>
+  </data>
+  <data name="porderdText" xml:space="preserve">
+    <value>Daily Order Detail</value>
+    <comment>Daily Order Detail</comment>
+  </data>
+  <data name="pserText" xml:space="preserve">
+    <value>Patient Preference: </value>
+    <comment>Patient Preference</comment>
+  </data>
+  <data name="psText" xml:space="preserve">
+    <value>Patient Preference:</value>
+    <comment>Prefered Server:</comment>
+  </data>
+  <data name="rcText" xml:space="preserve">
+    <value>Race :</value>
+    <comment>Race</comment>
+  </data>
+  <data name="relText" xml:space="preserve">
+    <value>Religion:</value>
+    <comment>Religion:</comment>
+  </data>
+  <data name="remarkText" xml:space="preserve">
+    <value>Remark</value>
+    <comment>Remark</comment>
+  </data>
+  <data name="rm" xml:space="preserve">
+    <value>Remove</value>
+    <comment>Remove</comment>
+  </data>
+  <data name="rm1" xml:space="preserve">
+    <value>Please enter remark</value>
+    <comment>Please enter remark</comment>
+  </data>
+  <data name="rmsText" xml:space="preserve">
+    <value>Remarks:</value>
+    <comment>Remarks:</comment>
+  </data>
+  <data name="sall" xml:space="preserve">
+    <value>Select All</value>
+    <comment>Select All</comment>
+  </data>
+  <data name="sbpText" xml:space="preserve">
+    <value>Search By Patient Name</value>
+    <comment>Search By Patient Name</comment>
+  </data>
+  <data name="sbwText" xml:space="preserve">
+    <value>Search By ward No.</value>
+    <comment>Search By ward No.</comment>
+  </data>
+  <data name="scanned_orderid_not_match" xml:space="preserve">
+    <value>Scanned order id does not match</value>
+    <comment>Scanned order id does not match</comment>
+  </data>
+  <data name="sd" xml:space="preserve">
+    <value>Sync done successfully.</value>
+    <comment>Sync done successfully.</comment>
+  </data>
+  <data name="searchPat" xml:space="preserve">
+    <value>Search Patient</value>
+  </data>
+  <data name="selbedmeal" xml:space="preserve">
+    <value>Please select Bed &amp; MealTime to continue..</value>
+    <comment>Please select Bed &amp; MealTime to continue..</comment>
+  </data>
+  <data name="select_ward_mealtime_first" xml:space="preserve">
+    <value>Please select Ward and mealtime first.</value>
+    <comment>Please select Ward and mealtime first.</comment>
+  </data>
+  <data name="serv" xml:space="preserve">
+    <value>Connection to the server failed, please check</value>
+    <comment>Connection to the server failed, please check</comment>
+  </data>
+  <data name="session" xml:space="preserve">
+    <value>Your session has expired. Please login again.</value>
+    <comment>Your session has expired. Please login again.</comment>
+  </data>
+  <data name="slText" xml:space="preserve">
+    <value>Language</value>
+    <comment>Language</comment>
+  </data>
+  <data name="spdataText" xml:space="preserve">
+    <value>Sync Patient Data</value>
+    <comment>Sync Patient Data</comment>
+  </data>
+  <data name="spText" xml:space="preserve">
+    <value>Soup</value>
+    <comment>Soup</comment>
+  </data>
+  <data name="srnText" xml:space="preserve">
+    <value>Sr. No.</value>
+    <comment>Sr. No.</comment>
+  </data>
+  <data name="srText" xml:space="preserve">
+    <value>Role</value>
+    <comment>Role</comment>
+  </data>
+  <data name="statusText" xml:space="preserve">
+    <value>Status</value>
+    <comment>Status</comment>
+  </data>
+  <data name="sv" xml:space="preserve">
+    <value>Save</value>
+    <comment>Save</comment>
+  </data>
+  <data name="sync" xml:space="preserve">
+    <value>Syncing...</value>
+    <comment>Syncing...</comment>
+  </data>
+  <data name="syncmenuitem" xml:space="preserve">
+    <value>Please sync 'Sync Menu Items' from drawer menu to proceed further.</value>
+    <comment>Please sync 'Sync Menu Items' from drawer menu to proceed further.</comment>
+  </data>
+  <data name="syncofforder" xml:space="preserve">
+    <value>There is no offline order to be sync.</value>
+    <comment>There is no offline order to be sync.</comment>
+  </data>
+  <data name="syncoffText" xml:space="preserve">
+    <value>Sync Offline Order</value>
+    <comment>Sync Offline Order</comment>
+  </data>
+  <data name="tblkgenderText" xml:space="preserve">
+    <value>Gender</value>
+    <comment>Gender</comment>
+  </data>
+  <data name="tblkH_NHText" xml:space="preserve">
+    <value>H-NH</value>
+    <comment>H-NH</comment>
+  </data>
+  <data name="tblklastmodifiedText" xml:space="preserve">
+    <value>Last Order Taken By</value>
+    <comment>Last Order Taken By</comment>
+  </data>
+  <data name="tblkorderText" xml:space="preserve">
+    <value>Order</value>
+    <comment>Order</comment>
+  </data>
+  <data name="tblkRText" xml:space="preserve">
+    <value>Race</value>
+    <comment>Race</comment>
+  </data>
+  <data name="therText" xml:space="preserve">
+    <value>DietType/Therapeutic:</value>
+    <comment>Therapeutic:</comment>
+  </data>
+  <data name="thText" xml:space="preserve">
+    <value>DIET TYPE / THERAPEUTIC</value>
+    <comment>THERAPEUTIC</comment>
+  </data>
+  <data name="tidText" xml:space="preserve">
+    <value>NRIC:</value>
+    <comment>Id:</comment>
+  </data>
+  <data name="txtamtText" xml:space="preserve">
+    <value>Amount</value>
+    <comment>Amount</comment>
+  </data>
+  <data name="txtAppVersion" xml:space="preserve">
+    <value>App Version</value>
+  </data>
+  <data name="txtAutoSuggestBoxPlaceholderText" xml:space="preserve">
+    <value>Search</value>
+    <comment>Search</comment>
+  </data>
+  <data name="txtbedText" xml:space="preserve">
+    <value>Bed:</value>
+    <comment>Bed:</comment>
+  </data>
+  <data name="txtblockpatientsearchText" xml:space="preserve">
+    <value>Patient Details</value>
+    <comment>Patient Details</comment>
+  </data>
+  <data name="txtCatText" xml:space="preserve">
+    <value>Category</value>
+    <comment>Category</comment>
+  </data>
+  <data name="txtdat" xml:space="preserve">
+    <value>Diet Type/Therapeutic</value>
+  </data>
+  <data name="txtDataText" xml:space="preserve">
+    <value>Update Available</value>
+    <comment>Update Available</comment>
+  </data>
+  <data name="txtDateText" xml:space="preserve">
+    <value>Date:  </value>
+    <comment>Date:</comment>
+  </data>
+  <data name="txtdiaContent" xml:space="preserve">
+    <value>Diabetic</value>
+    <comment>Diabetic</comment>
+  </data>
+  <data name="txtlogin" xml:space="preserve">
+    <value>LOGIN</value>
+    <comment>login</comment>
+  </data>
+  <data name="txtloginText" xml:space="preserve">
+    <value>Login</value>
+    <comment>Login</comment>
+  </data>
+  <data name="txtlogText" xml:space="preserve">
+    <value>Log Out</value>
+    <comment>LogOut</comment>
+  </data>
+  <data name="txtmiText" xml:space="preserve">
+    <value>Menu Item</value>
+    <comment>รายการเมนู</comment>
+  </data>
+  <data name="txtoidText" xml:space="preserve">
+    <value>Order Id:</value>
+    <comment>Order Id:</comment>
+  </data>
+  <data name="txtok" xml:space="preserve">
+    <value>OK</value>
+    <comment>OK</comment>
+  </data>
+  <data name="txtpassPlaceholderText" xml:space="preserve">
+    <value>Password</value>
+    <comment>Password</comment>
+  </data>
+  <data name="txtPatientSearch" xml:space="preserve">
+    <value>Patient Search</value>
+  </data>
+  <data name="txtSyncMaster" xml:space="preserve">
+    <value>Sync All Master Data</value>
+  </data>
+  <data name="txtSyncMenu" xml:space="preserve">
+    <value>Sync Menu Master</value>
+  </data>
+  <data name="txttotText" xml:space="preserve">
+    <value>Total : </value>
+    <comment>Total</comment>
+  </data>
+  <data name="txtusernamePlaceholderText" xml:space="preserve">
+    <value>Username</value>
+    <comment>user name</comment>
+  </data>
+  <data name="txtWardbedsText" xml:space="preserve">
+    <value>Ward-Bed :</value>
+    <comment>Ward-Bed</comment>
+  </data>
+  <data name="txtWardbedText" xml:space="preserve">
+    <value>Ward-Bed</value>
+    <comment>Ward-Bed</comment>
+  </data>
+  <data name="txtWardText" xml:space="preserve">
+    <value>Ward:</value>
+    <comment>Ward:</comment>
+  </data>
+  <data name="vegText" xml:space="preserve">
+    <value>Vegeterian:</value>
+    <comment>Vegeterian:</comment>
+  </data>
+  <data name="verify" xml:space="preserve">
+    <value>Verify</value>
+    <comment>Verify</comment>
+  </data>
+  <data name="vnText" xml:space="preserve">
+    <value>Veg/Non-Veg:</value>
+    <comment>Veg/Non-Veg:</comment>
+  </data>
+  <data name="waitmsg" xml:space="preserve">
+    <value>Please wait while we sync all data. &amp;#10;This might take some time...</value>
+    <comment>Please wait while we sync all data. &amp;#10;This might take some time...</comment>
+  </data>
+  <data name="wardbed" xml:space="preserve">
+    <value>Ward No.-Bed No.</value>
+  </data>
+  <data name="wdText" xml:space="preserve">
+    <value>Ward</value>
+    <comment>Ward</comment>
+  </data>
+  <data name="welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="yc" xml:space="preserve">
+    <value>You can't select more than one item.</value>
+    <comment>You can't select more than one item.</comment>
+  </data>
+  <data name="ycn" xml:space="preserve">
+    <value> Your order is cancelled. Do you want to place order for same patient?</value>
+    <comment>Your order is cancelled. Do you want to place order for same patient?</comment>
+  </data>
+  <data name="yo" xml:space="preserve">
+    <value> Your order is confirmed. Do you want to place another order for same patient?</value>
+    <comment>Your order is confirmed. Do you want to place another order for same patient?</comment>
+  </data>
+  <data name="yoff" xml:space="preserve">
+    <value> Your order is Saved Locally ,it will be confirmed when Internet is available and syncing from menu bar. Do you want to place order for same patient?</value>
+    <comment>Your order is Saved Locally ,it will be confirmed when Internet is available and syncing from menu bar. Do you want to place order for same patient?</comment>
+  </data>
+  <data name="yon" xml:space="preserve">
+    <value>Your order is not confirmed, there is some problem to process your request. Please check your internet connection.</value>
+    <comment>Your order is not confirmed, there is some problem to process your request. Please check your internet connection.</comment>
+  </data>
+  <data name="yor" xml:space="preserve">
+    <value>Your order is not confirmed, there is some problem to process your request. Please check your internet connection</value>
+    <comment>Your order is not confirmed, there is some problem to process your request. Please check your internet connection</comment>
+  </data>
+  <data name="yun" xml:space="preserve">
+    <value>You have un-selected </value>
+    <comment>You have un-selected</comment>
+  </data>
+</root>
